@@ -14,6 +14,7 @@ int	main()
 	std::string str;
 
 	std::cin >> str;
+	C_PhoneBook pb;
 	while (str.compare("\0") != 0)
 	{
 		if (str.compare(add) == 0)
@@ -22,8 +23,8 @@ int	main()
 		}
 		else if (str.compare(search) == 0)
 		{	
+			std::cout << pb.repertoir.first_name << std::endl;
 			pb.print_phonebook();
-			std::cout << "output results of search\n";
 		}
 		else if (str.compare(exit) == 0)
 			return (0);

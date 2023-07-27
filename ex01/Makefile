@@ -3,7 +3,7 @@ NAME = phonebook
 
 CXX = g++
 
-CPPFLAGS = -Werror -Wall -Wextra -std=c++98
+CPPFLAGS = -Werror -Wall -Wextra -g3 -std=c++98
 
 SRC = phonebook.cpp
 
