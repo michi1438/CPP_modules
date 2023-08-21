@@ -14,3 +14,8 @@ void	HumanA::attack(void)
 	std::cout << this->name << " attacks with their " << this->weap.getType() << std::endl;
 }	
 
+HumanA::~HumanA(void) 
+{
+	weap.cleType ();
+}
+

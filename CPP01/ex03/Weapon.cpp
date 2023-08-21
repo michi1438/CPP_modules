@@ -7,6 +7,15 @@ Weapon::Weapon (std::string type)
 	this->type = new std::string (type);
 }
 
+Weapon::Weapon () 
+
+{
+}
+
+Weapon::~Weapon ()
+{
+}
+
 const std::string	Weapon::getType (void)
 {
 	return (*(this->type));
@@ -14,6 +23,11 @@ const std::string	Weapon::getType (void)
 
 void	Weapon::setType (std::string ntype)
 {
-	delete this->type;
+	Weapon::cleType ();
 	this->type = new std::string (ntype);
+}
+
+void	Weapon::cleType (void)
+{
+	delete this->type;
 }

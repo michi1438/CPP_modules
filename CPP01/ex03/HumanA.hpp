@@ -13,7 +13,8 @@ class HumanA
 		Weapon weap;
 	public:
 		void	attack();
-		HumanA (std::string name, Weapon w);
+		HumanA	(std::string name, Weapon w);
+		~HumanA	(void);
 };
 
 #endif // __HumanA_hpp__
