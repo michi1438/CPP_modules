@@ -1,18 +1,19 @@
-#MAKEFILE
-NAME = phonebook
+# Makefile
+
+NAME = violence
 
 CXX = g++
 
-CPPFLAGS = -Werror -Wall -Wextra -g3 -std=c++98
+CXXFLAGS = -Werror -Wall -Wextra -std=c++98 -g3
 
-SRC = phonebook.cpp
+SRC = HumanA.cpp Weapon.cpp main.cpp
 
 OBJS = $(SRC:cpp=o)
-
+	
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CPPFLAGS) $(OBJS) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
 	rm -f $(OBJS)
