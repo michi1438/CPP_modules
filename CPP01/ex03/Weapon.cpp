@@ -8,7 +8,6 @@ Weapon::Weapon (std::string type)
 }
 
 Weapon::Weapon () 
-
 {
 }
 
