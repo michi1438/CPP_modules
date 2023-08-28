@@ -1,4 +1,4 @@
-# Makefile - HARL2
+# Makefile - Harl2 ex05
 
 NAME = Harl
 
@@ -6,7 +6,7 @@ CXX = g++
 
 CXXFLAGS = -Werror -Wall -Wextra -std=c++98 -g3
 
-SRCS = main.cpp
+SRCS = Harl.cpp main.cpp
 
 OBJS = $(SRCS:cpp=o)
 
@@ -14,10 +14,9 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
-	ar rcs
 
-clean:
-	rm -f $(OBJS)
+clean: 
+	rm -f $(OBJS) 
 
 fclean: clean
 	rm -f $(NAME)
