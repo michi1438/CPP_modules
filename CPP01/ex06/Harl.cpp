@@ -1,4 +1,4 @@
-// Harl.cpp - ex05
+// Harl_Filter.cpp - ex06
 
 #include "Harl.hpp"
 
@@ -8,6 +8,32 @@ Harl::Harl(void)
 	FuncMap["info"] = &Harl::info;
 	FuncMap["warning"] = &Harl::warning;
 	FuncMap["error"] = &Harl::error;
+}
+
+Harl::Harl(int given_level)
+{
+	switch (given_level)
+	{
+		case 0:	
+		{
+			FuncMap["debug"] = &Harl::debug;
+			__attribute__ ((fallthrough));
+		}
+		case 1:
+		{
+			FuncMap["info"] = &Harl::info;
+			__attribute__ ((fallthrough));
+		}
+		case 2:
+		{
+			FuncMap["warning"] = &Harl::warning;
+			__attribute__ ((fallthrough));
+		}
+		case 3:
+		{
+			FuncMap["error"] = &Harl::error;
+		}
+	}
 }
 
 void	Harl::debug(void)
