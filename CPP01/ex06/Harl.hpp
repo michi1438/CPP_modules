@@ -16,7 +16,6 @@ class	Harl
 		typedef void	(Harl::*FuncPtr)(void);
 		std::map<std::string, FuncPtr> FuncMap;
 	public:
-		Harl(void);
 		Harl(int given_val);
 		void	complain(std::string level);
 };

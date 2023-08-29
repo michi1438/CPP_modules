@@ -2,14 +2,6 @@
 
 #include "Harl.hpp"
 
-Harl::Harl(void)
-{
-	FuncMap["debug"] = &Harl::debug;
-	FuncMap["info"] = &Harl::info;
-	FuncMap["warning"] = &Harl::warning;
-	FuncMap["error"] = &Harl::error;
-}
-
 Harl::Harl(int given_level)
 {
 	switch (given_level)
