@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mguerga <marvin@42lausanne.ch>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/29 21:31:40 by mguerga           #+#    #+#             */
+/*   Updated: 2023/08/29 21:32:25 by mguerga          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 // Fixed.hpp - ex00
 
 #ifndef __Fixed_hpp__
@@ -13,7 +25,7 @@ class Fixed
 	public:
 		Fixed(void);
 		Fixed(const Fixed& a);
-		//operator overload to (setRawBits):
+		Fixed& operator= (const Fixed& other);
 		~Fixed(void);
 		int	getRawBits(void) const;
 		int	setRawBits(int const raw);
