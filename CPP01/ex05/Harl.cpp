@@ -4,10 +4,14 @@
 
 Harl::Harl(void)
 {
-	FuncMap["debug"] = &Harl::debug;
-	FuncMap["info"] = &Harl::info;
-	FuncMap["warning"] = &Harl::warning;
-	FuncMap["error"] = &Harl::error;
+	func_arr[0] = &Harl::debug;
+	arr_levels[0] = "debug";
+	func_arr[1] = &Harl::info;
+	arr_levels[1] = "info";
+	func_arr[2] = &Harl::warning;
+	arr_levels[2] = "warning";
+	func_arr[3] = &Harl::error;
+	arr_levels[3] = "error";
 }
 
 void	Harl::debug(void)
@@ -32,11 +36,13 @@ void	Harl::error(void)
 
 void	Harl::complain(std::string level)
 {
-	switch (this->FuncMap.count(level)) 
+	int	i (0);
+
+	while (i < 4)
 	{
-		case 1:
-			(this->*FuncMap[level])();
-		default:
-			;
+		if (arr_levels[i].compare(level) == 0)
+			(this->*func_arr[i])();
+		i++;
 	}
+	return ;
 }

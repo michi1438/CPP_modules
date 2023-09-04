@@ -4,20 +4,20 @@
 # define __Harl_hpp__
 
 # include <iostream>
-# include <map>
 
 class	Harl
 {
 	private:
-		void debug(void);
-		void info(void);
-		void warning(void);
-		void error(void);
-		typedef void	(Harl::*FuncPtr)(void);
-		std::map<std::string, FuncPtr> FuncMap;
+		void			debug(void);
+		void			info(void);
+		void			warning(void);
+		void			error(void);
+		typedef void	(Harl::*FuncPtr_t)(void);
+		FuncPtr_t		func_arr[4];
+		std::string		arr_levels[4];
 	public:
-		Harl(int given_val);
-		void	complain(std::string level);
+						Harl(int given_val);
+		void			complain(std::string level);
 };
 
 #endif // __Harl_hpp__
