@@ -1,5 +1,5 @@
 #MAKEFILE
-NAME = phonebook
+NAME = phonebook.out
 
 CXX = g++
 
