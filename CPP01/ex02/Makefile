@@ -10,7 +10,7 @@ SRC = main.cpp
 
 OBJS = $(SRC:cpp=o)
 
-ALL: $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)

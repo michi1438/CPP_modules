@@ -59,7 +59,10 @@ void	Harl::complain(std::string level)
 	while (i < 4)
 	{
 		if (arr_levels[i].compare(level) == 0)
+		{
 			(this->*func_arr[i])();
+			return ;
+		}
 		i++;
 	}
 	return ;

@@ -14,5 +14,5 @@ Zombie::Zombie (std::string name)
 
 Zombie::~Zombie ()
 {
-	std::cout << this->name << " : has been destroyed" << std::endl;
+	std::cout << this->name << ": has been destroyed" << std::endl;
 }

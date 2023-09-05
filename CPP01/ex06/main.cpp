@@ -20,24 +20,32 @@ int	indexify(char *av)
 		}
 		i++;
 	}
-	return (0);
+	return (-1);
 }
 
 int	main (int ac, char **av)
 {
 	
+	int level = indexify(av[1]);
+
 	if (ac > 2)
 	{
 		std::cout << "too many arguments..." << std::endl;
 		return (1);
 	}
-	Harl harl (indexify(av[1]));
+	if (level == -1)
+	{
+		std::cout << "[Probably complaining about insignificant problems !]" << std::endl; 
+		return (1);
+	}
+	Harl harl (level);
 	harl.complain("werror");
 	harl.complain("debug");
 	harl.complain("info");
 	harl.complain("warning");
 	harl.complain("error");
 	harl.complain("werror");
+	return (0);
 }
 
 		
