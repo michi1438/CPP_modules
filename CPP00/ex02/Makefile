@@ -3,7 +3,7 @@ NAME = account
 
 CXX = g++
 
-CPPFLAGS = -Werror -Wall -Wextra -g3 -std=c++98
+CPPFLAGS = -Werror -Wall -Wextra -g3 -std=c++98 -fsanitize=address
 
 SRC = Account.cpp tests.cpp
 
