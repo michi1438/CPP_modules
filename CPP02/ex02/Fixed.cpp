@@ -2,11 +2,7 @@
 
 #include "Fixed.hpp"
 
-std::ostream&	operator<<(std::ostream& os, const Fixed& F)
-{
-	os << F.toFloat();	
-	return (os);
-}
+// cdc_Coplien
 
 Fixed::Fixed(void)
 {
@@ -31,11 +27,9 @@ Fixed::Fixed(const float flt)
 	// does this work with inf+/inf- and NaN ?
 }
 
-Fixed&	Fixed::operator= (const Fixed& other)
+Fixed::~Fixed(void)
 {
-	std::cout << "Copy assignement operator called" << std::endl;
-	this->val = other.getRawBits();
-	return (*this);
+	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed& a)
@@ -44,10 +38,91 @@ Fixed::Fixed(const Fixed& a)
 	this->val = a.getRawBits();
 }
 
-Fixed::~Fixed(void)
+// Operators
+
+Fixed&	Fixed::operator= (const Fixed& other)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Copy assignement operator called" << std::endl;
+	this->val = other.getRawBits();
+	return (*this);
 }
+
+bool	Fixed::operator== (const Fixed& other) const
+{
+	if (this->val == other.val)
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator!= (const Fixed& other) const
+{
+	if (this->val != other.val)
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator>= (const Fixed& other) const
+{
+	if (this->val >= other.val)
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator<= (const Fixed& other) const
+{
+	if (this->val >= other.val)
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator> (const Fixed& other) const
+{
+	if (this->val > other.val)
+		return (true);
+	return (false);
+}
+
+bool	Fixed::operator< (const Fixed& other) const
+{
+	if (this->val < other.val)
+		return (true);
+	return (false);
+}
+
+Fixed	Fixed::operator+ (const Fixed& other) const
+{
+	return (float(this->val + other.val) / (1 << bits));
+}
+
+Fixed	Fixed::operator- (const Fixed& other) const
+{
+	return (float(this->val - other.val) / (1 << bits));
+}
+
+Fixed	Fixed::operator* (const Fixed& other) const
+{
+	return ((float(this->val) / (1 << bits)) * float(other.val) / (1 << bits));
+}
+
+Fixed	Fixed::operator/ (const Fixed& other) const
+{
+	return (float(this->val) / float(other.val));
+}
+
+Fixed	Fixed::operator++ (int)
+{
+	int	original = this->val;
+
+	this->val += 1;
+	return (float(original) / (1 << bits));
+}
+
+Fixed&	Fixed::operator++ ()
+{
+	this->val += 1;
+	return (*this);
+}
+// Member Function
 
 float	Fixed::toFloat(void) const
 {
@@ -69,4 +144,12 @@ int	Fixed::setRawBits(int const raw)
 {
 	val = raw;
 	return (val);
+}
+
+// Other
+
+std::ostream&	operator<<(std::ostream& os, const Fixed& F)
+{
+	os << F.toFloat();	
+	return (os);
 }
