@@ -122,6 +122,20 @@ Fixed&	Fixed::operator++ ()
 	this->val += 1;
 	return (*this);
 }
+
+Fixed	Fixed::operator-- (int)
+{
+	int	original = this->val;
+
+	this->val -= 1;
+	return (float(original) / (1 << bits));
+}
+
+Fixed&	Fixed::operator-- ()
+{
+	this->val -= 1;
+	return (*this);
+}
 // Member Function
 
 float	Fixed::toFloat(void) const
@@ -144,6 +158,52 @@ int	Fixed::setRawBits(int const raw)
 {
 	val = raw;
 	return (val);
+}
+
+// Is this necessary ?
+Fixed& Fixed::min(Fixed& a, Fixed& b)
+{
+	if (a.val < b.val)
+		return (a);
+	else if (b.val < a.val)
+		return (b);
+	else
+		std::cout << "No min, they are equals" << std::endl;
+	return (a);
+}
+
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
+{
+	if (a.val < b.val)
+		return (a);
+	else if (b.val < a.val)
+		return (b);
+	else
+		std::cout << "No min, they are equals" << std::endl;
+	return (a);
+}
+
+// Is this necessary ?
+Fixed& Fixed::max(Fixed& a, Fixed& b)
+{
+	if (a.val > b.val)
+		return (a);
+	else if (b.val > a.val)
+		return (b);
+	else
+		std::cout << "No max, they are equals" << std::endl;
+	return (a);
+}
+
+const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
+{
+	if (a.val > b.val)
+		return (a);
+	else if (b.val > a.val)
+		return (b);
+	else
+		std::cout << "No max, they are equals" << std::endl;
+	return (a);
 }
 
 // Other
