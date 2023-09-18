@@ -2,7 +2,6 @@
 
 #include "Point.hpp"
 
-
 // cdc Coplien
 Point::Point (void) {}
 
