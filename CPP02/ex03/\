@@ -30,8 +30,9 @@ bool	bsp(const Point a, const Point b, const Point c, const Point point)
 		return (true);
 	}
 	get_longest_side(a, b, c, L_side);
-//	if (a == L_side[0] && b == L_side[1])
-	//XXX	bsp(	
+	if (a == *(L_side[0]) && b == L_side[1])
+	bsp(	
+
 	return (true);
 }
 

@@ -15,8 +15,16 @@ class	Point
 					Point(const float fx, const float fy);	
 					~Point(void);
 					Point(const Point& other);
+		bool				operator== (const Point& other) const;
 		const Point&		operator= (const Point& other);	
 		void		print_coor(std::ostream& os) const;
+		Fixed		acc_axis(int axis) const;
+
+		enum e_axis
+		{
+			X = 0,
+			Y = 1,
+		};
 };
 
 std::ostream& operator<<(std::ostream& os, const Point& other);

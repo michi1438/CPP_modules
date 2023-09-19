@@ -8,8 +8,8 @@ ClapTrap::ClapTrap(std::string name)
 {
 	this->Name = name;
 	this->HitPoints = 10;
-	this->EnergyPoints = 1;
-	this->AttackDamage = 2;
+	this->EnergyPoints = 10;
+	this->AttackDamage = 0;
 }
 
 ClapTrap::~ClapTrap()
