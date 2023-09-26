@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 11:34:49 by mguerga           #+#    #+#             */
-/*   Updated: 2023/09/25 11:56:59 by mguerga          ###   ########.fr       */
+/*   Created: 2023/09/25 10:01:33 by mguerga           #+#    #+#             */
+/*   Updated: 2023/09/25 17:26:35 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __WrongAnimal_hpp__
-# define __WrongAnimal_hpp__
+#include "Animal.hpp"
 
-# include <iostream>
+//coplien cdc
 
-class	WrongAnimal
+Animal::Animal(void)
 {
-	protected:
-		std::string type;
-	public:
-							WrongAnimal(void);	
-		virtual				~WrongAnimal(void);
-		virtual std::string getType(void) const;
-		virtual void		makeSound(void) const;
-};
+	std::cout << "Random animal constructor" << std::endl;
+	type = "random_animal";
+}
 
-#endif // __WrongAnimal_hpp__
+Animal::~Animal(void)
+{
+	std::cout << "Random animal destructor" << std::endl;
+}
+
+//Member Functions
+std::string Animal::getType(void) const
+{
+	return (this->type);
+}
+
+void	Animal::makeSound(void) const {}

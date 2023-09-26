@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 11:34:49 by mguerga           #+#    #+#             */
-/*   Updated: 2023/09/25 11:56:59 by mguerga          ###   ########.fr       */
+/*   Created: 2023/09/25 16:13:16 by mguerga           #+#    #+#             */
+/*   Updated: 2023/09/25 17:32:32 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __WrongAnimal_hpp__
-# define __WrongAnimal_hpp__
+#ifndef __Brain_hpp__
+# define __Brain_hpp__
 
 # include <iostream>
 
-class	WrongAnimal
+class Brain
 {
-	protected:
-		std::string type;
+	private:
+		std::string ideas[100];
 	public:
-							WrongAnimal(void);	
-		virtual				~WrongAnimal(void);
-		virtual std::string getType(void) const;
-		virtual void		makeSound(void) const;
+					Brain(void); 
+					Brain(bool); 
+					~Brain(void);
 };
 
-#endif // __WrongAnimal_hpp__
+#endif //__Brain_hpp__

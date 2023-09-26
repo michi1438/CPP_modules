@@ -4,6 +4,7 @@
 # define __Animal_hpp__
 
 # include <iostream>
+# include "Brain.hpp"
 
 class	Animal
 {

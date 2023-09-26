@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 12:00:34 by mguerga           #+#    #+#             */
-/*   Updated: 2023/09/25 12:01:04 by mguerga          ###   ########.fr       */
+/*   Updated: 2023/09/25 17:47:33 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,27 @@
 #include "WrongCat.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#define ARR_SIZE 20
 
 int	main(void)
 {
-	const	Animal* meta = new Animal();
-	const	Animal* j = new Dog();
-	const	Animal* i = new Cat();
-	const	WrongAnimal* x = new WrongCat();
+	int i(0);
+	const Animal* horde[ARR_SIZE];
 	
-	std::cout << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl;
-	std::cout << meta->getType() << " " << std::endl;
-	std::cout << x->getType() << " " << std::endl;
+	while (i < ARR_SIZE)
+	{
+		if (i % 2 == 0)
+			horde[i] = new Cat;
+		else
+			horde[i] = new Dog;
+		i++;
+	}
+	i = 0;
+	while (i < ARR_SIZE) 
+	{
+		delete horde[i];
+		i++;
+	}
 
-	j->makeSound();
-	i->makeSound();
-	x->makeSound();
-	meta->makeSound();
-
-	delete i;
-	delete j;
-	delete x; 
-	delete meta;
 	return (0);
 }

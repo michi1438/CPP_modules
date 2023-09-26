@@ -4,16 +4,16 @@
 # define __Animal_hpp__
 
 # include <iostream>
+# include "Brain.hpp"
 
 class	Animal
 {
 	protected:
 		std::string type;
 	public:
-							Animal(void);	
 		virtual				~Animal(void);
-		virtual std::string getType(void) const;
-		virtual void		makeSound(void) const;
+		virtual std::string getType(void) const =0;
+		virtual void		makeSound(void) const =0;
 };
 
 #endif // __Animal_hpp__

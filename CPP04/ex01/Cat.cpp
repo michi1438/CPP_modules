@@ -1,29 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 11:34:49 by mguerga           #+#    #+#             */
-/*   Updated: 2023/09/25 11:56:59 by mguerga          ###   ########.fr       */
+/*   Created: 2023/09/25 10:30:16 by mguerga           #+#    #+#             */
+/*   Updated: 2023/09/25 17:46:24 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __WrongAnimal_hpp__
-# define __WrongAnimal_hpp__
+#include "Cat.hpp"
 
-# include <iostream>
-
-class	WrongAnimal
+//Coplien cdc
+Cat::Cat(void)
 {
-	protected:
-		std::string type;
-	public:
-							WrongAnimal(void);	
-		virtual				~WrongAnimal(void);
-		virtual std::string getType(void) const;
-		virtual void		makeSound(void) const;
-};
+	std::cout << "Cat Constructor called " << this << std::endl;
+	cat_Brain = new Brain();
+	type = "Cat";
+}
 
-#endif // __WrongAnimal_hpp__
+Cat::~Cat(void)
+{
+	delete cat_Brain;
+	std::cout << "Cat Destructor called" << std::endl;
+}
+	
+//Member Functions
+std::string Cat::getType(void) const
+{
+	return (this->type);
+}
+
+void	Cat::makeSound(void) const
+{
+	std::cout << "miaou miaou !!" << std::endl;
+}
+

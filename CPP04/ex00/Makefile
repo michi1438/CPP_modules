@@ -4,7 +4,7 @@ NAME = POLY.out
 
 CXX = g++
 
-CXXFLAGS = -Werror -Wall -Wextra -std=c++98 -g3
+CXXFLAGS = -Werror -Wall -Wextra -std=c++98 -g3 -fsanitize=leak
 
 SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 

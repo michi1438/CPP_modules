@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 11:34:49 by mguerga           #+#    #+#             */
-/*   Updated: 2023/09/25 11:56:59 by mguerga          ###   ########.fr       */
+/*   Created: 2023/09/25 16:19:20 by mguerga           #+#    #+#             */
+/*   Updated: 2023/09/25 17:46:41 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __WrongAnimal_hpp__
-# define __WrongAnimal_hpp__
+#include "Brain.hpp"
 
-# include <iostream>
+//coplien cdc
 
-class	WrongAnimal
+Brain::Brain(void)
 {
-	protected:
-		std::string type;
-	public:
-							WrongAnimal(void);	
-		virtual				~WrongAnimal(void);
-		virtual std::string getType(void) const;
-		virtual void		makeSound(void) const;
-};
+	std::cout << "Brain constructor called " << this << std::endl;
+}
 
-#endif // __WrongAnimal_hpp__
+Brain::Brain(bool)
+{
+	std::cout << "Brain constructor called w/ param" << std::endl;
+}
+
+Brain::~Brain(void)
+{
+	std::cout << "Brain destructor called" << std::endl;
+}
+
+// Member functions
+

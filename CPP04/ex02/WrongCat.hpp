@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/25 11:34:49 by mguerga           #+#    #+#             */
-/*   Updated: 2023/09/25 11:56:59 by mguerga          ###   ########.fr       */
+/*   Created: 2023/09/25 10:28:33 by mguerga           #+#    #+#             */
+/*   Updated: 2023/09/25 11:38:29 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __WrongAnimal_hpp__
-# define __WrongAnimal_hpp__
+#ifndef __WrongCat_hpp__
+# define __WrongCat_hpp__
 
-# include <iostream>
+# include "WrongAnimal.hpp"
 
-class	WrongAnimal
+class	WrongCat : virtual public WrongAnimal
 {
-	protected:
-		std::string type;
 	public:
-							WrongAnimal(void);	
-		virtual				~WrongAnimal(void);
-		virtual std::string getType(void) const;
-		virtual void		makeSound(void) const;
+		WrongCat(void);
+		~WrongCat(void);
+		std::string	getType(void) const;
+		void		makeSound(void) const;
 };
 
-#endif // __WrongAnimal_hpp__
+#endif // __WrongCat_hpp__
