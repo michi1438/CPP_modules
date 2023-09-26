@@ -6,19 +6,19 @@
 
 Fixed::Fixed(void)
 {
-	std::cout << "Default constructor called" << std::endl;
+//	std::cout << "Default constructor called" << std::endl;
 	val = 0;
 }
 
 Fixed::Fixed(const int interger)
 {
-	std::cout << "int constructor called" << std::endl;
+//	std::cout << "int constructor called" << std::endl;
 	val = interger * (1 << bits);
 }
 
 Fixed::Fixed(const float flt)
 {
-	std::cout << "Float Constructor called" << std::endl;
+//	std::cout << "Float Constructor called" << std::endl;
 	val = roundf(flt * (1 << bits));
 	// how does it keep the sign, since shifted out ?
 	// must be kept inside the shifting.
@@ -29,12 +29,12 @@ Fixed::Fixed(const float flt)
 
 Fixed::~Fixed(void)
 {
-	std::cout << "Destructor called" << std::endl;
+//	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed& a)
 {
-	std::cout << "Copy Constructor called" << std::endl;
+//	std::cout << "Copy Constructor called" << std::endl;
 	this->val = a.getRawBits();
 }
 
@@ -42,7 +42,7 @@ Fixed::Fixed(const Fixed& a)
 
 Fixed&	Fixed::operator= (const Fixed& other)
 {
-	std::cout << "Copy assignement operator called" << std::endl;
+//	std::cout << "Copy assignement operator called" << std::endl;
 	this->val = other.getRawBits();
 	return (*this);
 }
@@ -150,7 +150,7 @@ int	Fixed::toInt(void) const
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+//	std::cout << "getRawBits member function called" << std::endl;
 	return (this->val);
 }
 
@@ -167,8 +167,8 @@ Fixed& Fixed::min(Fixed& a, Fixed& b)
 		return (a);
 	else if (b.val < a.val)
 		return (b);
-	else
-		std::cout << "No min, they are equals" << std::endl;
+//	else
+//		std::cout << "No min, they are equals" << std::endl;
 	return (a);
 }
 
@@ -178,8 +178,8 @@ const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
 		return (a);
 	else if (b.val < a.val)
 		return (b);
-	else
-		std::cout << "No min, they are equals" << std::endl;
+//	else
+//		std::cout << "No min, they are equals" << std::endl;
 	return (a);
 }
 
@@ -190,8 +190,8 @@ Fixed& Fixed::max(Fixed& a, Fixed& b)
 		return (a);
 	else if (b.val > a.val)
 		return (b);
-	else
-		std::cout << "No max, they are equals" << std::endl;
+//	else
+//		std::cout << "No max, they are equals" << std::endl;
 	return (a);
 }
 
@@ -201,8 +201,8 @@ const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
 		return (a);
 	else if (b.val > a.val)
 		return (b);
-	else
-		std::cout << "No max, they are equals" << std::endl;
+//	else
+//		std::cout << "No max, they are equals" << std::endl;
 	return (a);
 }
 
