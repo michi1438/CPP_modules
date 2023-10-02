@@ -4,7 +4,7 @@ NAME = brainz
 
 CXX = g++
 
-CXXFLAGS = -Werror -Wall -Wextra -std=c++98 -g3 -fsanitize=leak
+CXXFLAGS = -Werror -Wall -Wextra -std=c++98 -g3
 
 SRC = Zombie.cpp main.cpp
 

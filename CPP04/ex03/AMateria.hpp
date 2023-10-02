@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mguerga <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/02 16:50:07 by mguerga           #+#    #+#             */
-/*   Updated: 2023/10/02 16:51:57 by mguerga          ###   ########.fr       */
+/*   Created: 2023/10/02 14:33:43 by mguerga           #+#    #+#             */
+/*   Updated: 2023/10/02 16:42:30 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// main.cpp
+#ifndef __AMateria_hpp__
+# define __AMateria_hpp__
 
-#include "Zombie.hpp"
+# include <iostream>
 
-Zombie	*zombieHorde(int N, std::string name);
-
-int	main(void)
+class AMateria
 {
-	std::string	str;
+	protected:
 
-	std::cin >> str;
-	Zombie *horde (zombieHorde(5, str));
-	for (int i = 0; i < 5; i++)
-		horde[i].announce();
-	delete [] horde;
+	public:
+							AMateria(std::string const & type);
+		const std::string & getType() const;
+
 }
