@@ -4,7 +4,7 @@ NAME = BSP
 
 CXX = g++ 
 
-CXXFLAGS = -Werror -Wall -Wextra -std=c++98 -g3 #-fsanitize=undefined
+CXXFLAGS = -Werror -Wall -Wextra -std=c++98 -g3 -fsanitize=undefined
 
 SRCS = main.cpp Fixed.cpp Point.cpp bsp.cpp
 

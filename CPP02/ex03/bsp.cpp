@@ -6,12 +6,18 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/26 11:16:11 by mguerga           #+#    #+#             */
-/*   Updated: 2023/10/03 17:46:39 by mguerga          ###   ########.fr       */
+/*   Updated: 2023/10/03 21:22:30 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
-#define MAX_DEPTH 1000
+#define MAX_DEPTH 100
+
+enum e_axis
+{
+	X = 0,
+	Y = 1,
+};
 
 int	get_longest_side(Point a, Point b, Point c, Fixed *L_side);
 const Point	get_mid(const Point A, const Point B);
@@ -25,17 +31,17 @@ bool	bsp(const Point a, const Point b, const Point c, const Point point)
 	Fixed	L_side;
 	int		side;
 	
-	x_range[0] = Fixed::min(c.acc_axis(0), Fixed::min(a.acc_axis(0), b.acc_axis(0)));
-	x_range[1] = Fixed::max(c.acc_axis(0), Fixed::max(a.acc_axis(0), b.acc_axis(0)));
-	y_range[0] = Fixed::min(c.acc_axis(1), Fixed::min(a.acc_axis(1), b.acc_axis(1)));
-	y_range[1] = Fixed::max(c.acc_axis(1), Fixed::max(a.acc_axis(1), b.acc_axis(1)));
+	x_range[X] = Fixed::min(c.acc_axis(X), Fixed::min(a.acc_axis(X), b.acc_axis(X)));
+	x_range[1] = Fixed::max(c.acc_axis(X), Fixed::max(a.acc_axis(X), b.acc_axis(X)));
+	y_range[0] = Fixed::min(c.acc_axis(Y), Fixed::min(a.acc_axis(Y), b.acc_axis(Y)));
+	y_range[1] = Fixed::max(c.acc_axis(Y), Fixed::max(a.acc_axis(Y), b.acc_axis(Y)));
 
 	std::cout << "x_range[0] == " << x_range[0] << std::endl;
 	std::cout << "x_range[1] == " << x_range[1] << std::endl;
 	std::cout << "y_range[0] == " << y_range[0] << std::endl;
 	std::cout << "y_range[1] == " << y_range[1] << std::endl;
 
-	if (x_range[0] > point.acc_axis(0) || point.acc_axis(0) > x_range[1] || y_range[0] > point.acc_axis(1) || point.acc_axis(1) > y_range[1])
+	if (x_range[0] > point.acc_axis(X) || point.acc_axis(X) > x_range[1] || y_range[0] > point.acc_axis(Y) || point.acc_axis(Y) > y_range[1])
 	{
 		std::cout << "point is out of this field ! depth == " << depth << std::endl << std::endl;
 		return (false);
@@ -75,10 +81,10 @@ bool	bsp(const Point a, const Point b, const Point c, const Point point)
 
 const Point	get_mid(const Point A, const Point B)
 {
-	Fixed	delta_x = Fixed::max(A.acc_axis(0), B.acc_axis(0)) - Fixed::min(A.acc_axis(0), B.acc_axis(0));
-	Fixed	delta_y = Fixed::max(A.acc_axis(1), B.acc_axis(1)) - Fixed::min(A.acc_axis(1), B.acc_axis(1));
+	Fixed	delta_x = Fixed::max(A.acc_axis(X), B.acc_axis(X)) - Fixed::min(A.acc_axis(X), B.acc_axis(X));
+	Fixed	delta_y = Fixed::max(A.acc_axis(Y), B.acc_axis(Y)) - Fixed::min(A.acc_axis(Y), B.acc_axis(Y));
 
-	const Point ret((Fixed::min(A.acc_axis(0), B.acc_axis(0)) + delta_x / 2).toFloat(), (Fixed::min(A.acc_axis(1), B.acc_axis(1)) + delta_y / 2).toFloat());
+	const Point ret((Fixed::min(A.acc_axis(X), B.acc_axis(X)) + delta_x / 2).toFloat(), (Fixed::min(A.acc_axis(Y), B.acc_axis(Y)) + delta_y / 2).toFloat());
 
 	return (ret);
 }
@@ -86,22 +92,22 @@ const Point	get_mid(const Point A, const Point B)
 
 int	get_longest_side(Point a, Point b, Point c, Fixed *L_side)
 {
-	int side (0);
+	int side (X);
 	Fixed temp_side;
 
-	Fixed delta_x = Fixed::max(a.acc_axis(0), b.acc_axis(0)) - Fixed::min(a.acc_axis(0), b.acc_axis(0));
-	Fixed delta_y = Fixed::max(a.acc_axis(1), b.acc_axis(1)) - Fixed::min(a.acc_axis(1), b.acc_axis(1));
+	Fixed delta_x = Fixed::max(a.acc_axis(X), b.acc_axis(X)) - Fixed::min(a.acc_axis(X), b.acc_axis(X));
+	Fixed delta_y = Fixed::max(a.acc_axis(Y), b.acc_axis(Y)) - Fixed::min(a.acc_axis(Y), b.acc_axis(Y));
 	*L_side = (float)sqrt(pow(delta_x.toFloat(), 2) + pow(delta_y.toFloat(), 2));
-	delta_x = Fixed::max(b.acc_axis(0), c.acc_axis(0)) - Fixed::min(b.acc_axis(0), c.acc_axis(0));
-	delta_y = Fixed::max(b.acc_axis(1), c.acc_axis(1)) - Fixed::min(b.acc_axis(1), c.acc_axis(1));
+	delta_x = Fixed::max(b.acc_axis(X), c.acc_axis(X)) - Fixed::min(b.acc_axis(X), c.acc_axis(X));
+	delta_y = Fixed::max(b.acc_axis(Y), c.acc_axis(Y)) - Fixed::min(b.acc_axis(Y), c.acc_axis(Y));
 	temp_side = (float)sqrt(pow(delta_x.toFloat(), 2) + pow(delta_y.toFloat(), 2));
 	if (temp_side > *L_side)
 	{
 		*L_side = temp_side;
 		side = 1;
 	}
-	delta_x = Fixed::max(a.acc_axis(0), c.acc_axis(0)) - Fixed::min(a.acc_axis(0), c.acc_axis(0));
-	delta_y = Fixed::max(a.acc_axis(1), c.acc_axis(1)) - Fixed::min(a.acc_axis(1), c.acc_axis(1));
+	delta_x = Fixed::max(a.acc_axis(X), c.acc_axis(X)) - Fixed::min(a.acc_axis(X), c.acc_axis(X));
+	delta_y = Fixed::max(a.acc_axis(Y), c.acc_axis(Y)) - Fixed::min(a.acc_axis(Y), c.acc_axis(Y));
 	temp_side = (float)sqrt(pow(delta_x.toFloat(), 2) + pow(delta_y.toFloat(), 2));
 	if (temp_side > *L_side)
 	{

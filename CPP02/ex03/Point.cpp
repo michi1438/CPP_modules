@@ -7,10 +7,9 @@ Point::Point (void) {}
 
 Point::Point (float fx, float fy) : x(fx), y(fy) {}
 
-Point::~Point (void) {}
-
 Point::Point (const Point& other) : x(other.x), y(other.y) {}
 
+Point::~Point (void) {}
 
 // operator overcharge
 
@@ -44,6 +43,7 @@ void	Point::print_coor(std::ostream& os) const
 }
 
 // Isertion operator
+
 std::ostream& operator<<(std::ostream& os, const Point& other)
 {
 	other.print_coor(os);

@@ -15,8 +15,8 @@ class Fixed
 							Fixed(void);
 							Fixed(const int interger);
 							Fixed(const float flt);
-							~Fixed(void);
 							Fixed(const Fixed& a);
+							~Fixed(void);
 
 		Fixed&				operator= (const Fixed& other);
 		bool				operator== (const Fixed& other) const;
@@ -38,6 +38,7 @@ class Fixed
 		static const Fixed&	min(const Fixed& a, const Fixed& b);
 		static Fixed&		max(Fixed& a, Fixed& b);
 		static const Fixed&	max(const Fixed& a, const Fixed& b);
+
 		float				toFloat(void) const;
 		int					toInt(void) const;
 		int					getRawBits(void) const;

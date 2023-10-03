@@ -13,10 +13,12 @@ class	Point
 	public:
 					Point(void);	
 					Point(const float fx, const float fy);	
-					~Point(void);
 					Point(const Point& other);
+					~Point(void);
+
 		bool				operator== (const Point& other) const;
 		const Point&		operator= (const Point& other);	
+
 		void		print_coor(std::ostream& os) const;
 		Fixed		acc_axis(int axis) const;
 

@@ -20,11 +20,6 @@ Fixed::Fixed(const float flt)
 {
 //	std::cout << "Float Constructor called" << std::endl;
 	val = roundf(flt * (1 << bits));
-	// how does it keep the sign, since shifted out ?
-	// must be kept inside the shifting.
-	// same for  exponent how is it not interpreted as part of the value ?
-	// why only two digit after decimal for 1234.4321 ?
-	// does this work with inf+/inf- and NaN ?
 }
 
 Fixed::~Fixed(void)
