@@ -20,22 +20,17 @@ Fixed::Fixed(const float flt)
 {
 	std::cout << "Float Constructor called" << std::endl;
 	val = roundf(flt * (1 << bits));
-	// how does it keep the sign, since shifted out ?
-	// must be kept inside the shifting.
-	// same for  exponent how is it not interpreted as part of the value ?
-	// why only two digit after decimal for 1234.4321 ?
-	// does this work with inf+/inf- and NaN ?
-}
-
-Fixed::~Fixed(void)
-{
-	std::cout << "Destructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed& a)
 {
 	std::cout << "Copy Constructor called" << std::endl;
 	this->val = a.getRawBits();
+}
+
+Fixed::~Fixed(void)
+{
+	std::cout << "Destructor called" << std::endl;
 }
 
 // Operators
@@ -106,6 +101,8 @@ Fixed	Fixed::operator* (const Fixed& other) const
 
 Fixed	Fixed::operator/ (const Fixed& other) const
 {
+	if (other.val == 0)
+	   std::cout << "ERR, dividing by 0; unhandled" << std::endl;
 	return (float(this->val) / float(other.val));
 }
 
@@ -136,6 +133,7 @@ Fixed&	Fixed::operator-- ()
 	this->val -= 1;
 	return (*this);
 }
+
 // Member Function
 
 float	Fixed::toFloat(void) const

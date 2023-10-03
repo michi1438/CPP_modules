@@ -8,6 +8,8 @@ std::ostream&	operator<<(std::ostream& os, const Fixed& F)
 	return (os);
 }
 
+//cdc
+
 Fixed::Fixed(void)
 {
 	std::cout << "Default constructor called" << std::endl;
@@ -31,13 +33,6 @@ Fixed::Fixed(const float flt)
 	// does this work with inf+/inf- and NaN ?
 }
 
-Fixed&	Fixed::operator= (const Fixed& other)
-{
-	std::cout << "Copy assignement operator called" << std::endl;
-	this->val = other.getRawBits();
-	return (*this);
-}
-
 Fixed::Fixed(const Fixed& a)
 {
 	std::cout << "Copy Constructor called" << std::endl;
@@ -48,6 +43,17 @@ Fixed::~Fixed(void)
 {
 	std::cout << "Destructor called" << std::endl;
 }
+
+//operator
+
+Fixed&	Fixed::operator= (const Fixed& other)
+{
+	std::cout << "Copy assignement operator called" << std::endl;
+	this->val = other.getRawBits();
+	return (*this);
+}
+
+//member functions
 
 float	Fixed::toFloat(void) const
 {
@@ -61,7 +67,7 @@ int	Fixed::toInt(void) const
 
 int	Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
+	//std::cout << "getRawBits member function called" << std::endl;
 	return (this->val);
 }
 

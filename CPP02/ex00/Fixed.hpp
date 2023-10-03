@@ -6,7 +6,7 @@
 /*   By: mguerga <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 21:31:40 by mguerga           #+#    #+#             */
-/*   Updated: 2023/08/29 21:32:25 by mguerga          ###   ########.fr       */
+/*   Updated: 2023/10/03 20:10:38 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@ class Fixed
 	public:
 		Fixed(void);
 		Fixed(const Fixed& a);
-		Fixed& operator= (const Fixed& other);
 		~Fixed(void);
-		int	getRawBits(void) const;
-		int	setRawBits(int const raw);
+		Fixed& operator= (const Fixed& other);
+		int		getRawBits(void) const;
+		void	setRawBits(int const raw);
 };
 
 #endif //__Fixed_hpp__

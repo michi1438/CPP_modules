@@ -6,7 +6,7 @@
 /*   By: mguerga <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 21:31:40 by mguerga           #+#    #+#             */
-/*   Updated: 2023/09/06 16:25:14 by mguerga          ###   ########.fr       */
+/*   Updated: 2023/10/03 20:38:13 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ class Fixed
 		Fixed(const int interger);
 		Fixed(const float flt);
 		Fixed(const Fixed& a);
-		Fixed& operator= (const Fixed& other);
 		~Fixed(void);
+		Fixed& operator= (const Fixed& other);
 		float	toFloat(void) const;
 		int		toInt(void) const;
 		int		getRawBits(void) const;

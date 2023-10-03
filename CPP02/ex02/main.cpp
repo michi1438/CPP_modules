@@ -7,18 +7,18 @@ std::ostream& operator<<(std::ostream& os, const Fixed& other);
 
 int	main(void)
 {
-	Fixed a;
+	Fixed a(-10);
 	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
 	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
+	std::cout << a-- << std::endl;
 	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
-	std::cout << a << std::endl;
+	std::cout << --a << std::endl;
+	std::cout << "a = " << a << std::endl;
 
-	std::cout << b << std::endl;
+	std::cout << "b = "<< b << std::endl;
 
-	std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << "max of a and b = " << Fixed::max( a, b ) << std::endl;
 /*
 	Fixed a;
 	Fixed b;

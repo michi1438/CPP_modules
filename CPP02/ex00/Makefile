@@ -4,7 +4,7 @@ NAME = Fixed
 
 CXX = g++
 
-CXXFLAGS = -Werror -Wextra -Wall -std=c++98 -g3
+CXXFLAGS = -Werror -Wextra -Wall -std=c++98 -g3 #-fsanitize=address
 
 SRCS = main.cpp Fixed.cpp
 

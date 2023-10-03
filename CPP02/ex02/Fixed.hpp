@@ -6,7 +6,7 @@
 /*   By: mguerga <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 21:31:40 by mguerga           #+#    #+#             */
-/*   Updated: 2023/09/12 09:35:42 by mguerga          ###   ########.fr       */
+/*   Updated: 2023/10/03 20:41:42 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ class Fixed
 		static const Fixed&	min(const Fixed& a, const Fixed& b);
 		static Fixed&		max(Fixed& a, Fixed& b);
 		static const Fixed&	max(const Fixed& a, const Fixed& b);
+
 		float				toFloat(void) const;
 		int					toInt(void) const;
 		int					getRawBits(void) const;
