@@ -4,24 +4,24 @@
 
 HumanB::HumanB(std::string hname): name(hname)
 {
+	weap = NULL;
 }
 
 void	HumanB::attack(void)
 {
-	std::cout << this->name << " attacks with their " << this->weap.getType() << std::endl;
+	if (weap == NULL)
+		std::cout << this->name << " attacks with their " << this->weap << std::endl;
+	else
+		std::cout << this->name << " attacks with their " << this->weap->getType() << std::endl;
 }	
 
 void	HumanB::setWeapon (Weapon w)
 {
-	this->weap = w;
-}
-
-void	HumanB::setType(std::string nweap)
-{
-	weap.setType(nweap);
+	this->weap = new Weapon(w);
 }
 
 HumanB::~HumanB(void) 
 {
-	weap.cleType ();
+	weap->cleType();
+	delete weap;
 }

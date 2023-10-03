@@ -9,21 +9,22 @@ Weapon::Weapon (std::string type)
 
 Weapon::Weapon () 
 {
+	this->type = NULL; 
 }
 
 Weapon::~Weapon ()
 {
 }
 
-const std::string	Weapon::getType (void)
+const std::string&	Weapon::getType (void)
 {
-	return (*(this->type));
+	return (*type);
 }
 
 void	Weapon::setType (std::string ntype)
 {
-	Weapon::cleType ();
-	this->type = new std::string (ntype);
+	//Weapon::cleType ();
+	this->type->swap(ntype);
 }
 
 void	Weapon::cleType (void)

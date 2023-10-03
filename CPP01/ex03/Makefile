@@ -4,7 +4,7 @@ NAME = violence
 
 CXX = g++
 
-CXXFLAGS = -Werror -Wall -Wextra -std=c++98 -g3 -fsanitize=leak
+CXXFLAGS = -Werror -Wall -Wextra -std=c++98 -g3 #-fsanitize=address
 
 SRC =  HumanA.cpp HumanB.cpp Weapon.cpp main.cpp
 

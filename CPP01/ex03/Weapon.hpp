@@ -13,7 +13,7 @@ class Weapon
 		Weapon ();
 		Weapon (std::string type);
 		~Weapon ();
-		const std::string	getType (void);
+		const std::string&	getType (void);
 		void				setType (std::string);
 		void				cleType (void);
 };
