@@ -6,15 +6,37 @@
 // cdc coplien
 ClapTrap::ClapTrap(std::string name)
 {
+	//std::cout << this->Name << "Constructor called !" << std::endl;
+
 	this->Name = name;
 	this->HitPoints = 10;
 	this->EnergyPoints = 10;
 	this->AttackDamage = 0;
 }
 
-ClapTrap::~ClapTrap()
+ClapTrap::ClapTrap(void) {}
+
+ClapTrap::~ClapTrap(void)
 {
 	std::cout << this->Name << " destructor called !" << std::endl;
+}
+
+ClapTrap::ClapTrap(const ClapTrap& other)
+{
+	std::cout << "Copy Constructor called" << std::endl;
+	*this = other;	
+}
+
+// operator
+
+ClapTrap& ClapTrap::operator= (const ClapTrap& other)
+{
+	std::cout << "Assignement operator called" << std::endl;
+	this->Name = other.Name;
+	this->HitPoints = other.HitPoints;
+	this->EnergyPoints = other.EnergyPoints;
+	this->AttackDamage = other.AttackDamage;
+	return (*this);
 }
 
 // other member functions

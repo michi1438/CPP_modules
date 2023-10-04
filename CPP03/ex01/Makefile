@@ -4,7 +4,7 @@ NAME = ScavTrap
 
 CXX = g++
 
-CXXFLAGS = -Werror -Wall -Wextra -std=c++98 -g3
+CXXFLAGS = -Werror -Wall -Wextra -std=c++98 -g3# -fsanitize=address
 
 SRCS = main.cpp ClapTrap.cpp ScavTrap.cpp
 

@@ -15,10 +15,15 @@ class	ClapTrap
 	public:
 					ClapTrap(std::string name);
 					ClapTrap(void);
+					ClapTrap(const ClapTrap& other);
 					~ClapTrap(void);
+
+					ClapTrap& operator= (const ClapTrap& other);
+
 		int			getAttackDamage(void);
 		int			getEnergyPoints(void);
 		std::string	getName(void);
+
 		void		attack(const std::string& target);
 		void		takeDamage(unsigned int amount);
 		void		beRepaired(unsigned int amount);

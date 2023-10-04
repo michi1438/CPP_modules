@@ -22,9 +22,13 @@ int	main(void)
 	ScavTrap	st41("Scavbert");
 	FragTrap	ft41("Fragbert");
 	ClapTrap	ct42("Vrobert");
+	FragTrap	ft43(ft41);
+	FragTrap	ft44 = ft41;
 	DiamondTrap dt21("Megabert");
+	DiamondTrap dt22 = dt21;
 	
 	dt21.whoAmI();
+	dt22.whoAmI();
 	dt21.guardGate();
 	dt21.highFivesGuys();
 	dt21.attack(ct42.getName());

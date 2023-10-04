@@ -13,9 +13,31 @@ ScavTrap::ScavTrap(std::string name)
 	this->AttackDamage = 20;
 }
 
+ScavTrap::ScavTrap(void) {}
+
+ScavTrap::ScavTrap(const ScavTrap& other)
+{
+	std::cout << "ScavTrap copy consturctor called" << std::endl;
+	*this = other;
+}
+
 ScavTrap::~ScavTrap(void)
 {
 	std::cout << this->Name << " ScavTrap destructor called !" << std::endl; 
+}
+
+// operator
+
+ScavTrap&	ScavTrap::operator= (const ScavTrap& other)
+{
+	std::cout << "ScavTrap Assignement operator called" << std::endl;
+
+	this->Name = other.Name;
+	this->HitPoints = other.HitPoints;
+	this->EnergyPoints = other.EnergyPoints;
+	this->AttackDamage = other.AttackDamage;
+
+	return (*this);
 }
 
 // other member functions

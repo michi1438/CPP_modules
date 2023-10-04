@@ -13,9 +13,31 @@ FragTrap::FragTrap(std::string name)
 	this->AttackDamage = 30;
 }
 
+FragTrap::FragTrap(void) {}
+
+FragTrap::FragTrap(const FragTrap& other)
+{
+	std::cout << "FragTrap copy consturctor called" << std::endl;
+	*this = other;
+}
+
 FragTrap::~FragTrap(void)
 {
 	std::cout << this->Name << " FragTrap destructor called !" << std::endl; 
+}
+
+// operator
+
+FragTrap&	FragTrap::operator= (const FragTrap& other)
+{
+	std::cout << "FragTrap Assignement operator called" << std::endl;
+
+	this->Name = other.Name;
+	this->HitPoints = other.HitPoints;
+	this->EnergyPoints = other.EnergyPoints;
+	this->AttackDamage = other.AttackDamage;
+
+	return (*this);
 }
 
 // other member functions

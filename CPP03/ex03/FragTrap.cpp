@@ -21,22 +21,32 @@ FragTrap::FragTrap(void)
 	this->AttackDamage = 30;
 }
 
+FragTrap::FragTrap(const FragTrap& other)
+{
+	std::cout << "FragTrap copy consturctor called" << std::endl;
+	*this = other;
+}
+
 FragTrap::~FragTrap(void)
 {
 	std::cout << this->Name << " FragTrap destructor called !" << std::endl; 
 }
 
+// operator
+
+FragTrap&	FragTrap::operator= (const FragTrap& other)
+{
+	std::cout << "FragTrap Assignement operator called" << std::endl;
+
+	this->Name = other.Name;
+	this->HitPoints = other.HitPoints;
+	this->EnergyPoints = other.EnergyPoints;
+	this->AttackDamage = other.AttackDamage;
+
+	return (*this);
+}
+
 // other member functions
-
-int		FragTrap::ft_getHP(void)
-{
-	return (this->HitPoints);
-}
-
-int		FragTrap::ft_getatt(void)
-{
-	return (this->AttackDamage);
-}
 
 void	FragTrap::attack(const std::string& target)
 {
@@ -54,3 +64,16 @@ void	FragTrap::highFivesGuys(void)
 {
 	std::cout << "The Frag named " << this->Name << " says \"Gimme Five !\"." << std::endl;
 }
+
+// accessors
+
+int		FragTrap::ft_getHP(void)
+{
+	return (this->HitPoints);
+}
+
+int		FragTrap::ft_getatt(void)
+{
+	return (this->AttackDamage);
+}
+

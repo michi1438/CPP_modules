@@ -1,4 +1,14 @@
-// ClapTrap.cpp - ex00 - Cpp03
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mguerga <marvin@42lausanne.ch>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/04 11:01:43 by mguerga           #+#    #+#             */
+/*   Updated: 2023/10/04 13:50:06 by mguerga          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
@@ -14,6 +24,12 @@ ClapTrap::ClapTrap(std::string name)
 	this->AttackDamage = 0;
 }
 
+ClapTrap::ClapTrap(const ClapTrap& other)
+{
+	std::cout << "ClapTrap Copy Constructor called" << std::endl;
+	*this = other;	
+}
+
 ClapTrap::ClapTrap(void)
 {
 	std::cout << "ClapTrap constructor called with no parameters !" << std::endl; 
@@ -24,7 +40,22 @@ ClapTrap::~ClapTrap()
 	std::cout << this->Name << " ClapTrap destructor called !" << std::endl;
 }
 
+// operator
+
+ClapTrap& ClapTrap::operator= (const ClapTrap& other)
+{
+	std::cout << "ClapTrap Assignement operator called" << std::endl;
+
+	this->Name = other.Name;
+	this->HitPoints = other.HitPoints;
+	this->EnergyPoints = other.EnergyPoints;
+	this->AttackDamage = other.AttackDamage;
+
+	return (*this);
+}
+
 // other member functions
+
 void	ClapTrap::attack(const std::string& target)
 {
 	if (this->EnergyPoints <= 0)

@@ -20,6 +20,8 @@ int	main(void)
 {
 	ScavTrap	st41("Scavbert");
 	FragTrap	ft41("fragbert");
+	FragTrap	ft42(ft41);
+	FragTrap	ft43 = ft42;
 	ClapTrap	ct42("Vrobert");
 	
 	st41.attack(ct42.getName());
