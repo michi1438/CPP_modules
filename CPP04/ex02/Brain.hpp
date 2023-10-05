@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 16:13:16 by mguerga           #+#    #+#             */
-/*   Updated: 2023/09/25 17:32:32 by mguerga          ###   ########.fr       */
+/*   Updated: 2023/10/05 11:18:56 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,10 @@ class Brain
 		std::string ideas[100];
 	public:
 					Brain(void); 
-					Brain(bool); 
+					Brain(const Brain& other);
 					~Brain(void);
+
+					Brain& operator= (const Brain& other);
 };
 
 #endif //__Brain_hpp__

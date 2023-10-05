@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 12:00:34 by mguerga           #+#    #+#             */
-/*   Updated: 2023/10/05 11:32:51 by mguerga          ###   ########.fr       */
+/*   Updated: 2023/10/05 11:52:27 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,6 @@ int	main(void)
 		delete horde[i];
 		i++;
 	}
-
-Cat basic;
-{
-Cat tmp = basic;
-}
 
 	return (0);
 }
