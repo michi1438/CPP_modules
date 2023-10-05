@@ -1,4 +1,14 @@
-//Animal.hpp - ex00 - cpp04
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mguerga <marvin@42lausanne.ch>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/05 09:19:01 by mguerga           #+#    #+#             */
+/*   Updated: 2023/10/05 09:19:54 by mguerga          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #ifndef __Animal_hpp__
 # define __Animal_hpp__
@@ -11,7 +21,11 @@ class	Animal
 		std::string type;
 	public:
 							Animal(void);	
+							Animal(const Animal& other);
 		virtual				~Animal(void);
+
+		virtual				Animal& operator= (const Animal& other);
+
 		virtual std::string getType(void) const;
 		virtual void		makeSound(void) const;
 };

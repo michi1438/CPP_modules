@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 10:28:33 by mguerga           #+#    #+#             */
-/*   Updated: 2023/09/25 11:38:29 by mguerga          ###   ########.fr       */
+/*   Updated: 2023/10/05 09:22:24 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,11 @@ class	WrongCat : virtual public WrongAnimal
 {
 	public:
 		WrongCat(void);
+		WrongCat(const WrongCat& other);
 		~WrongCat(void);
+
+		WrongCat&	operator= (const WrongCat& other);
+
 		std::string	getType(void) const;
 		void		makeSound(void) const;
 };
