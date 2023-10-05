@@ -6,7 +6,7 @@
 /*   By: mguerga <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 13:54:49 by mguerga           #+#    #+#             */
-/*   Updated: 2023/10/05 17:55:41 by mguerga          ###   ########.fr       */
+/*   Updated: 2023/10/05 18:43:16 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,6 @@ void	Character::equip(AMateria* m)
 	{
 		if (this->slots[i] == NULL)
 		{
-			//delete this->slots[i];
 			this->slots[i] = m;
 			return ;
 		}
