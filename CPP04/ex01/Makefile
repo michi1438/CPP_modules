@@ -4,9 +4,9 @@ NAME = POLY.out
 
 CXX = g++
 
-CXXFLAGS = -Werror -Wall -Wextra -std=c++98 -g3 -fsanitize=leak
+CXXFLAGS = -Werror -Wall -Wextra -std=c++98 -g3 -fsanitize=address
 
-SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp Brain.cpp
+SRCS = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 
 OBJS = $(SRCS:cpp=o)
 

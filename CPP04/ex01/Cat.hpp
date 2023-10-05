@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 10:28:33 by mguerga           #+#    #+#             */
-/*   Updated: 2023/09/25 17:47:10 by mguerga          ###   ########.fr       */
+/*   Updated: 2023/10/05 09:53:15 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,11 @@ class	Cat : virtual public Animal
 		Brain *cat_Brain;
 	public:
 		Cat(void);
+		Cat(const Cat& other);
 		~Cat(void);
+
+		Cat&	operator= (const Cat& other);
+
 		std::string	getType(void) const;
 		void		makeSound(void) const;
 };

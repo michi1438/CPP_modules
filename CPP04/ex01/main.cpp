@@ -6,13 +6,11 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 12:00:34 by mguerga           #+#    #+#             */
-/*   Updated: 2023/09/25 17:47:33 by mguerga          ###   ########.fr       */
+/*   Updated: 2023/10/05 10:04:51 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #define ARR_SIZE 20
