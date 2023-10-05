@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 10:30:16 by mguerga           #+#    #+#             */
-/*   Updated: 2023/10/05 09:55:41 by mguerga          ###   ########.fr       */
+/*   Updated: 2023/10/05 11:29:46 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@ Cat& Cat::operator= (const Cat& other)
 	std::cout << "Cat assignement operator called" << std::endl;
 
 	this->type = other.type;
+	this->cat_Brain = new Brain(*other.cat_Brain);
+	//std::cout << "cat_Brain = " << this->cat_Brain << std::endl;
+
 	return (*this);
 }
 

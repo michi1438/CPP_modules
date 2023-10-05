@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/25 10:28:33 by mguerga           #+#    #+#             */
-/*   Updated: 2023/10/05 09:53:15 by mguerga          ###   ########.fr       */
+/*   Updated: 2023/10/05 11:40:35 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,14 @@ class	Cat : virtual public Animal
 {
 	private:
 		Brain *cat_Brain;
+
+		Cat&	operator= (const Cat& other);
+
 	public:
 		Cat(void);
 		Cat(const Cat& other);
 		~Cat(void);
 
-		Cat&	operator= (const Cat& other);
 
 		std::string	getType(void) const;
 		void		makeSound(void) const;

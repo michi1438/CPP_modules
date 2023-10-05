@@ -6,7 +6,7 @@
 /*   By: mguerga <marvin@42lausanne.ch>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/05 09:15:43 by mguerga           #+#    #+#             */
-/*   Updated: 2023/10/05 09:51:44 by mguerga          ###   ########.fr       */
+/*   Updated: 2023/10/05 11:30:09 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@ Dog& Dog::operator= (const Dog& other)
 	std::cout << "Dog assignement operator called" << std::endl;
 
 	this->type = other.type;
+	this->dog_Brain = new Brain(*other.dog_Brain);
+	//std::cout << "dog_Brain = " << this->dog_Brain << std::endl;
+
 	return (*this);
 }
 
