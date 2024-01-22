@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 19:13:07 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/10 19:55:02 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/01/22 18:41:43 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,53 +14,32 @@
 
 // cdco Coplien
 
-Form::Form(void) : FName("Unspcified Form")
+Form::Form(void) : FName("Unspcified Form"), SGrade(150), EGrade(150)
 {
-	SGrade = 150;
-	EGrade = 150;
+	Signed = false;
 }
 
 
-Form::Form(std::string name, int sgrade int egrade) : FName(name)
+Form::Form(std::string name, int sgrade, int egrade) : FName(name), SGrade(sgrade), EGrade(egrade)
 {
-	SGrade = sgrade;
-	EGrade = egrade;
 	try
 	{
 		if (SGrade < 1)
-			throw (Form::GradeToHighException(1));
+			throw (Form::GradeToHighException());
 		else if (SGrade > 150)
-			throw (Form::GradeToLowException(1));
+			throw (Form::GradeToLowException());
 		else if (EGrade < 1)
-			throw (Form::GradeToHighException(0));
+			throw (Form::GradeToHighException());
 		else if (EGrade > 150)
-			throw (Form::GradeToLowException(0));
+			throw (Form::GradeToLowException());
 	}
-	catch (GradeToHighException High(int Tgrade))
+	catch (GradeToHighException High())
 	{
-		if (Tgrade == 1)
-		{
-			std::cout << "The given SGrade for " << FName << " is too High\n";
-			SGrade = 1;
-		}
-		else
-		{
-			std::cout << "The given EGrade for " << FName << " is too High\n";
-			EGrade = 1;
-		}
+		std::cout << "The given Grade for " << FName << " is too High\n";
 	}	
 	catch (GradeToLowException Low)
 	{
-		if (Tgrade == 1)
-		{
-			std::cout << "The given SGrade for " << FName << " is too Low\n";
-			SGrade = 150;
-		}
-		else	
-		{
-			std::cout << "The given EGrade for " << FName << " is too Low\n";
-			EGrade = 150;
-		}
+		std::cout << "The given sGrade for " << FName << " is too Low\n";
 	}
 }
 
@@ -68,22 +47,45 @@ Form::~Form(void)
 {
 }
 
-Form::Form(const Form& other)
+Form::Form(const Form& o) : FName(o.getFName()), SGrade(o.getSGrade()), EGrade(o.getEGrade())  
 {
-	*this = other;
+	*this = o;
 }
 
-Form&	Form::operator= (const Form& other)
+Form&	Form::operator= (const Form& o) 
 {
-	// make getters
-	this->FName = other.FName;
-	this->Signed = other.Signed;
-	this->SGrade = other.SGrade;
-	this->EGrade = other.EGrade;
+	this->Signed = o.Signed;
 	return (*this);
-	
 }
 
 // Member func
+std::string	Form::getFName(void) const
+{
+	return (this->FName);
+}
 
+int	Form::getSGrade(void) const
+{
+	return (this->SGrade);
+}
 
+int Form::getEGrade(void) const
+{
+	return (this->EGrade);
+}
+
+bool Form::getSigned(void) const
+{
+	return (this->Signed);
+}
+// Other
+std::ostream&	operator<<(std::ostream& os, const Form& B)
+{
+	if (B.getSigned() == true)
+		os << B.getFName() << " is a SIGNED Form :" << std::endl;
+	else
+		os << B.getFName() << " is an UNSIGNED Form :" << std::endl;
+	os << "Signing grade : " << B.getSGrade() << std::endl;
+	os << "Execution grade : " << B.getEGrade() << std::endl;
+	return (os);
+}

@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 18:34:25 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/10 19:12:31 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/01/22 18:32:32 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ class	Form
 {
 	private:
 		const std::string	FName;
-		bool				Signed = false;
+		bool				Signed;
 		const int			SGrade;
 		const int			EGrade;
 
 	public:
 						Form(void);
 						Form(std::string name, int sgrade, int egrade);
-						Form(const Form& other);
+						Form(const Form& o);
 						~Form(void);
 		
-		Form&			operator= (const Form& other);
+		Form&			operator= (const Form& o);
 
 		std::string		getFName(void) const;
 		int				getSGrade(void) const;
@@ -40,6 +40,6 @@ class	Form
 		
 };
 
-std::ostream& operator<<(std::ostream& os, const Bureaucrat& other);
+std::ostream& operator<<(std::ostream& os, const Form& other);
 
 #endif
