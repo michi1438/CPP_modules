@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 19:13:07 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/22 18:41:43 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/01/23 12:49:15 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ Form::Form(const Form& o) : FName(o.getFName()), SGrade(o.getSGrade()), EGrade(o
 	*this = o;
 }
 
+// TODO how does this work FName Sgrade and EGrade are not specified...
 Form&	Form::operator= (const Form& o) 
 {
 	this->Signed = o.Signed;
@@ -59,6 +60,30 @@ Form&	Form::operator= (const Form& o)
 }
 
 // Member func
+
+void	Form::beSigned(Bureaucrat b)
+{
+	int Sgrd;
+
+	Sgrd = this->getSGrade();
+	try
+	{
+		if (Sgrd > 0 && Sgrd <= 150 && b.getGrade() <= Sgrd)
+			this->Signed = true;
+		else 
+			throw (Form::GradeToLowException());
+	}
+	catch (GradeToHighException High())
+	{
+		std::cout << "The given Grade for " << FName << " is too High\n";
+	}	
+	catch (GradeToLowException Low)
+	{
+		std::cout << "The given sGrade for " << FName << " is too Low\n";
+	}
+	
+}
+
 std::string	Form::getFName(void) const
 {
 	return (this->FName);
@@ -78,7 +103,9 @@ bool Form::getSigned(void) const
 {
 	return (this->Signed);
 }
+
 // Other
+
 std::ostream&	operator<<(std::ostream& os, const Form& B)
 {
 	if (B.getSigned() == true)

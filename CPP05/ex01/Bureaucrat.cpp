@@ -6,11 +6,12 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:58:33 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/10 19:51:07 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/01/23 13:20:49 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 // cdco_Coplien
 
@@ -98,6 +99,15 @@ void			Bureaucrat::decrement(void)
 		std::cout << "The given grade for " << _Name << " is too Low\n";
 		_Grade = 150;
 	}	
+}
+
+
+void			Bureaucrat::signForm(Form *f)
+{
+	if (f.Signed == true)
+		std::cout << this.getName() << " signed " << f.getFName() << std::endl;
+	else
+		std::cout << this.getName() << "couldn't sign" << f.getFName() << " because " << this->getName() << "had to low of a grade" << std::endl;
 }
 
 // Other
