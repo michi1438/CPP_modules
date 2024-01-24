@@ -6,15 +6,17 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 18:34:25 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/23 13:07:30 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/01/24 10:15:13 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __Form_hpp__
 # define __Form_hpp__
 
-# include "Bureaucrat.hpp"
 # include <iostream>
+//# include "Bureaucrat.hpp" 
+
+class	Bureaucrat;
 
 class	Form
 {
@@ -36,9 +38,24 @@ class	Form
 		int				getSGrade(void) const;
 		int				getEGrade(void) const;
 		bool			getSigned(void) const;
-		class			GradeToHighException{};
-		class			GradeToLowException{};
 		void			beSigned(Bureaucrat b);
+
+		class			GradeToHighException : public std::exception 
+		{
+			public:
+				const char *what() const throw ()
+				{
+					return ("Grade too high.");
+				}
+		};
+		class			GradeToLowException : public std::exception 
+		{
+			public:
+				const char *what() const throw ()
+				{
+					return ("Grade too Low.");
+				}
+		};
 		
 };
 

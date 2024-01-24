@@ -6,11 +6,12 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 19:13:07 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/23 12:49:15 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/01/24 10:06:52 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
 
 // cdco Coplien
 
@@ -19,35 +20,25 @@ Form::Form(void) : FName("Unspcified Form"), SGrade(150), EGrade(150)
 	Signed = false;
 }
 
-
-Form::Form(std::string name, int sgrade, int egrade) : FName(name), SGrade(sgrade), EGrade(egrade)
+Form::Form(std::string name, int sgrade, int egrade) :
+	FName(name),
+   	SGrade(sgrade),
+	EGrade(egrade)
 {
-	try
-	{
-		if (SGrade < 1)
+		if (SGrade < 1 || EGrade < 1)
 			throw (Form::GradeToHighException());
-		else if (SGrade > 150)
+		else if (SGrade > 150 || EGrade > 150)
 			throw (Form::GradeToLowException());
-		else if (EGrade < 1)
-			throw (Form::GradeToHighException());
-		else if (EGrade > 150)
-			throw (Form::GradeToLowException());
-	}
-	catch (GradeToHighException High())
-	{
-		std::cout << "The given Grade for " << FName << " is too High\n";
-	}	
-	catch (GradeToLowException Low)
-	{
-		std::cout << "The given sGrade for " << FName << " is too Low\n";
-	}
 }
 
 Form::~Form(void)
 {
 }
 
-Form::Form(const Form& o) : FName(o.getFName()), SGrade(o.getSGrade()), EGrade(o.getEGrade())  
+Form::Form(const Form& o) :
+   	FName(o.getFName()), 
+	SGrade(o.getSGrade()), 
+	EGrade(o.getEGrade())  
 {
 	*this = o;
 }
@@ -66,22 +57,10 @@ void	Form::beSigned(Bureaucrat b)
 	int Sgrd;
 
 	Sgrd = this->getSGrade();
-	try
-	{
-		if (Sgrd > 0 && Sgrd <= 150 && b.getGrade() <= Sgrd)
-			this->Signed = true;
-		else 
-			throw (Form::GradeToLowException());
-	}
-	catch (GradeToHighException High())
-	{
-		std::cout << "The given Grade for " << FName << " is too High\n";
-	}	
-	catch (GradeToLowException Low)
-	{
-		std::cout << "The given sGrade for " << FName << " is too Low\n";
-	}
-	
+	if (Sgrd > 0 && Sgrd <= 150 && b.getGrade() <= Sgrd)
+		this->Signed = true;
+	else 
+		throw (Form::GradeToLowException());
 }
 
 std::string	Form::getFName(void) const
