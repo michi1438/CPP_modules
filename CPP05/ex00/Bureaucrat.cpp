@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:58:33 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/10 19:51:07 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/01/24 10:38:03 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,14 @@ Bureaucrat::Bureaucrat(void) : _Name("Anonymus Lexus")
 	_Grade = 150;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : _Name(name)
+Bureaucrat::Bureaucrat(std::string name, int grade) : 
+	_Name(name)
 {
-	try
-	{
-		if (grade < 1)
-			throw (Bureaucrat::GradeToHighException());
-		else if (grade > 150)
-			throw (Bureaucrat::GradeToLowException());
-		else
-			_Grade = grade;
-	}
-	catch (GradeToHighException High)
-	{
-		std::cout << "The given grade for " << _Name << " is too High\n";
-		_Grade = 1;
-	}	
-	catch (GradeToLowException Low)
-	{
-		std::cout << "The given grade for " << _Name << " is too Low\n";
-		_Grade = 150;
-	}
+	if (grade < 1)
+		throw (Bureaucrat::GradeToHighException());
+	else if (grade > 150)
+		throw (Bureaucrat::GradeToLowException());
+	this->_Grade = grade;
 }
 
 Bureaucrat::~Bureaucrat(void)
@@ -72,32 +59,16 @@ int				Bureaucrat::getGrade(void) const
 
 void			Bureaucrat::increment(void)
 {
-	try
-	{
-		this->_Grade--;
-		if (_Grade < 1)
-			throw (GradeToHighException());
-	}
-	catch (GradeToHighException High)
-	{
-		std::cout << "The given grade for " << _Name << " is too High\n";
-		_Grade = 1;
-	}	
+	this->_Grade--;
+	if (_Grade < 1)
+		throw (GradeToHighException());
 }
 
 void			Bureaucrat::decrement(void)
 {
-	try
-	{
-		this->_Grade++;
-		if (_Grade > 150)
-			throw (GradeToLowException());
-	}
-	catch (GradeToLowException Low)
-	{
-		std::cout << "The given grade for " << _Name << " is too Low\n";
-		_Grade = 150;
-	}	
+	this->_Grade++;
+	if (_Grade > 150)
+		throw (GradeToLowException());
 }
 
 // Other

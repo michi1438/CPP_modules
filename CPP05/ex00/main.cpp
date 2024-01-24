@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:39:22 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/10 18:54:19 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/01/24 10:40:13 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,48 @@
 
 int main()
 {
-	Bureaucrat b("John", 1);
-	Bureaucrat d("Enrique", 155);
-	Bureaucrat e;
-	
-	Bureaucrat c = b;
-
-	c.decrement();
-	c.decrement();
-	c.decrement();
-	b.increment();
-
-	std::cout << b << c;
-	d.increment();
-	std::cout << d;
-	std::cout << e;
+	try
+	{
+		Bureaucrat b("John", 2);
+		Bureaucrat d("Enrique", 150);
+		std::cout << b << d;
+		std::cout << std::endl;
+		std::cout << "------------------------------This should work------------------" << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try
+	{
+		Bureaucrat b("John", -2);
+		std::cout << "------------------------------This shouldn't print------------------" << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try
+	{
+		Bureaucrat b("John", 1);
+		b.increment();
+		std::cout << "------------------------------This shouldn't print------------------" << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try
+	{
+		Bureaucrat d("Enrique", 3);
+		d.increment();
+		d.increment();
+		std::cout << d;
+		std::cout << "------------------------------This should work-------------------" << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:59:38 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/10 18:43:15 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/01/24 10:37:38 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,23 @@ class Bureaucrat
 		int				getGrade(void) const;
 		void			increment(void);
 		void			decrement(void);
-		class			GradeToHighException{};
-		class			GradeToLowException{};
+
+		class			GradeToHighException : public std::exception 
+		{
+			public:
+				const char *what() const throw ()
+				{
+					return ("Grade too high.");
+				}
+		};
+		class			GradeToLowException : public std::exception 
+		{
+			public:
+				const char *what() const throw ()
+				{
+					return ("Grade too Low.");
+				}
+		};
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& other);
