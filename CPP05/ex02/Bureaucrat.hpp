@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:59:38 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/29 16:18:09 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/01/29 16:55:47 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ class Bureaucrat
 						Bureaucrat(std::string name, int grade);
 						Bureaucrat(const Bureaucrat& other);
 						~Bureaucrat(void);
-
 		Bureaucrat&		operator= (const Bureaucrat& other);		
+
 		std::string		getName(void) const;
 		int				getGrade(void) const;
+
 		void			increment(void);
 		void			decrement(void);
 		void			signForm(AForm &f) const;

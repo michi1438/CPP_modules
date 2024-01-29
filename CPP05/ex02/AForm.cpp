@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 19:13:07 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/29 16:41:08 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/01/29 18:43:13 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@
 
 // cdco Coplien
 
-AForm::AForm(void) {}
+AForm::AForm(void)
+{
+	this->setSigned(false);
+	this->setTarget("undefined_target");
+}
 
 AForm::~AForm(void) {}
 
@@ -30,6 +34,7 @@ AForm&	AForm::operator= (const AForm& o)
 	this->setSGrade(o.getSGrade());
 	this->setEGrade(o.getEGrade());
 	this->setSigned(o.getSigned());
+	this->setTarget(o.getTarget());
 	return (*this);
 }
 
@@ -60,6 +65,8 @@ int	AForm::execute(const Bureaucrat &b) const
 	return 0;
 }
 
+//getters and setters
+
 std::string	AForm::getFName(void) const
 {
 	return (this->FName);
@@ -80,6 +87,11 @@ bool AForm::getSigned(void) const
 	return (this->Signed);
 }
 
+std::string AForm::getTarget (void) const
+{
+	return (this->Target);
+}
+
 void	AForm::setFName(std::string str)
 {
 	this->FName = str;
@@ -98,6 +110,11 @@ void	AForm::setEGrade(int grd)
 void	AForm::setSigned(bool t)
 {
 	this->Signed = t;
+}
+
+void	AForm::setTarget(std::string str)
+{
+	this->Target = str;
 }
 
 // Other

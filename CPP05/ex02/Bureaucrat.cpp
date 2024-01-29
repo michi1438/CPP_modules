@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:58:33 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/29 16:39:37 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/01/29 18:29:58 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,7 @@ Bureaucrat&	Bureaucrat::operator= (const Bureaucrat& other)
 	return (*this);
 }
 
-
-// Member func
+//getters
 
 std::string		Bureaucrat::getName(void) const
 {
@@ -56,6 +55,8 @@ int				Bureaucrat::getGrade(void) const
 {
 	return (_Grade);
 }
+
+// Member func
 
 void			Bureaucrat::increment(void)
 {
@@ -80,7 +81,7 @@ void			Bureaucrat::executeForm(AForm const &f) const
 		if (exec == 0)
 			std::cout << this->getName() << " executed " << f.getFName() << std::endl; 
 		else if (exec == 1)
-			std::cout << this->getName() << " could not execute " << f.getFName() << "it was not signed !" << std::endl;
+			std::cout << this->getName() << " could not execute " << f.getFName() << ", it was not signed !" << std::endl;
 	}
 	catch (std::exception &e)
 	{
