@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/28 16:56:48 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/29 19:02:02 by mguerga          ###   ########.fr       */
+/*   Created: 2024/01/29 19:00:24 by mguerga           #+#    #+#             */
+/*   Updated: 2024/01/29 19:04:06 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __PresidentialPardonForm_hpp__
-# define __PresidentialPardonForm_hpp__
+#ifndef __RobotomyRequestForm_hpp__
+# define __RobotomyRequestForm_hpp__
 
 # include "AForm.hpp"
 
-class	PresidentialPardonForm : virtual public AForm
+class RobotomyRequestForm : virtual public AForm
 {
 	private:
 
 	public:
-		PresidentialPardonForm(std::string target);
-		PresidentialPardonForm(void);
-		~PresidentialPardonForm(void);
+		RobotomyRequestForm(std::string target);
+		RobotomyRequestForm(void);
+		~RobotomyRequestForm(void);
 
 		void action(void) const;
 };
 
 #endif
-
-

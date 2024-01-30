@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/28 16:56:48 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/29 19:02:02 by mguerga          ###   ########.fr       */
+/*   Created: 2024/01/30 10:33:08 by mguerga           #+#    #+#             */
+/*   Updated: 2024/01/30 10:34:23 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __PresidentialPardonForm_hpp__
-# define __PresidentialPardonForm_hpp__
+#ifndef __ShrubberyCreationForm_hpp__
+# define __ShrubberyCreationForm_hpp__ 
 
 # include "AForm.hpp"
 
-class	PresidentialPardonForm : virtual public AForm
+class ShrubberyCreationForm: virtual public AForm
 {
 	private:
 
 	public:
-		PresidentialPardonForm(std::string target);
-		PresidentialPardonForm(void);
-		~PresidentialPardonForm(void);
+		ShrubberyCreationForm(std::string target);
+		ShrubberyCreationForm(void);
+		~ShrubberyCreationForm(void);
 
 		void action(void) const;
 };
 
 #endif
-
-

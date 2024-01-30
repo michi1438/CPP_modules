@@ -6,7 +6,7 @@ CXX = g++
 
 CXXFLAGS = -Werror -Wall -Wextra -std=c++98
 
-SRCS = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
 
 OBJS = $(SRCS:cpp=o)
 
@@ -22,5 +22,6 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f *_Shrubbery
 
 .PHONY: re fclean clean
