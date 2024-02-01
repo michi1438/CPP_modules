@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:39:22 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/01 11:10:30 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/01 13:37:03 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include "ShrubberyCreationForm.hpp"
 #include "AForm.hpp"
 #include "Intern.hpp"
+
+typedef AForm Form;
 
 int main()
 {
@@ -83,6 +85,29 @@ int main()
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << "------------------------------END_OF_TEST3------------------" << std::endl;
+	std::cout << std::endl;
+
+	std::cout << "------------------------------TEST4------------------" << std::endl;
+	try
+	{
+		Bureaucrat b("Frank", 7);
+		Intern someRandomIntern;
+		Intern RandomIntern(someRandomIntern);
+		Intern Intern = RandomIntern;
+
+		Form* rff;
+
+		rff = Intern.MakeForm("Robotomy request", "Bender");
+		std::cout << b << *rff << std::endl;
+		b.signForm(*rff);
+		b.executeForm(*rff);
+		delete rff;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << "------------------------------END_OF_TEST4------------------" << std::endl;
 	std::cout << std::endl;
 	return (0);
 }

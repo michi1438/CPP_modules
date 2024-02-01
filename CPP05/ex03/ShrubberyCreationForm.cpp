@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 10:34:44 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/30 11:18:14 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/01 12:58:33 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,14 @@ ShrubberyCreationForm::ShrubberyCreationForm(std::string target)
 
 	this->setTarget(target);
 	this->setFName(fname.append("'s ShrubberyCreationForm"));
+	this->setSGrade(145);
+	this->setEGrade(137);
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(std::string form_name, std::string target)
+{
+	this->setTarget(target);
+	this->setFName(form_name);
 	this->setSGrade(145);
 	this->setEGrade(137);
 }

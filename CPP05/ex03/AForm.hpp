@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 18:34:25 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/01 10:44:10 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/01 13:11:54 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define __AForm_hpp__
 
 # include <iostream>
+
 //# include "Bureaucrat.hpp" 
 
 class	Bureaucrat;
@@ -31,7 +32,7 @@ class	AForm
 						AForm(void);
 						AForm(std::string target);
 						AForm(const AForm& o);
-						~AForm(void);
+		virtual			~AForm(void);
 		AForm&			operator= (const AForm& o);
 
 		std::string		getFName(void) const;

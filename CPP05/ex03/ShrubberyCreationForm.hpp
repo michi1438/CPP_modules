@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 10:33:08 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/30 10:34:23 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/01 12:56:03 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class ShrubberyCreationForm: virtual public AForm
 
 	public:
 		ShrubberyCreationForm(std::string target);
+		ShrubberyCreationForm(std::string form_name, std::string target);
 		ShrubberyCreationForm(void);
 		~ShrubberyCreationForm(void);
 

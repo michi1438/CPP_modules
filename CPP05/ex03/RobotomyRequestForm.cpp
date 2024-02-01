@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/29 19:12:37 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/30 10:27:40 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/01 13:26:56 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,14 @@ RobotomyRequestForm::RobotomyRequestForm(std::string target)
 
 	this->setTarget(target);
 	this->setFName(fname.append("'s RobotomyRequestForm"));
+	this->setSGrade(72);
+	this->setEGrade(45);
+}
+
+RobotomyRequestForm::RobotomyRequestForm(std::string form_name, std::string target)
+{
+	this->setTarget(target);
+	this->setFName(form_name);
 	this->setSGrade(72);
 	this->setEGrade(45);
 }

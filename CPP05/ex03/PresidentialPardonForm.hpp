@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 16:56:48 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/29 19:02:02 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/01 12:56:11 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class	PresidentialPardonForm : virtual public AForm
 
 	public:
 		PresidentialPardonForm(std::string target);
+		PresidentialPardonForm(std::string form_name, std::string target);
 		PresidentialPardonForm(void);
 		~PresidentialPardonForm(void);
 
