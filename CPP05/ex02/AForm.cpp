@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 19:13:07 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/29 18:43:13 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/01 10:34:58 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int	AForm::execute(const Bureaucrat &b) const
 
 	Egrd = this->getEGrade();
 	if (this->getSigned() == false)
-		return 1;
+		throw (AForm::FormNotSigned());
 	if (Egrd > 0 && Egrd <= 150 && b.getGrade() <= Egrd)
 		this->action();
 	else 

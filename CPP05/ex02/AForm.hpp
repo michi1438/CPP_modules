@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 18:34:25 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/29 18:42:26 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/01 10:44:10 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,10 @@ class	AForm
 		class			GradeToHighException : public std::exception 
 		{
 			public:
+//throw(): This is an exception specification. It is used to declare the set of exceptions that a function can throw. In this case, throw() specifies that the function does not throw any exceptions. This is sometimes referred to as an empty exception specification.
 				const char *what() const throw ()
 				{
-					return ("Grade too high.");
+					return ("Grade too High.");
 				}
 		};
 		class			GradeToLowException : public std::exception 
@@ -64,6 +65,14 @@ class	AForm
 				const char *what() const throw ()
 				{
 					return ("Grade too Low.");
+				}
+		};
+		class			FormNotSigned : public std::exception
+		{
+			public:
+				const char *what() const throw ()
+				{
+					return ("Form was not Signed.");
 				}
 		};
 		
