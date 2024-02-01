@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Intern.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 15:39:22 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/24 10:23:47 by mguerga          ###   ########.fr       */
+/*   Created: 2024/01/30 12:39:54 by mguerga           #+#    #+#             */
+/*   Updated: 2024/01/30 13:30:27 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "Intern.hpp"
 
-int main()
+// cdco
+
+Intern::Intern(void) {}
+
+Intern::~Intern(void) {}
+
+Intern::(const &Intern o)
 {
-	try
-	{
-		Form f;
-		Form ff("taxe reduction", 5, 2);
-		std::cout << ff << std::endl << f << std::endl;
-		Bureaucrat b("John", 2);
-		std::cout << b;
-		Bureaucrat d("Enrique", 150);
-		std::cout << d;
-		b.signForm(ff);
-		d.signForm(f);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	return (0);
+	*o = this;
 }
+
+Intern& Intern::operator= (const Intern& other)
+{
+	return this;
+}
+
+// member func
+
+AForm& MakeForm(std::string form_name, std::string target_name)
+{
+	std::string tab[3];
+
+	tab[0] = "robotomyr";
+	tab[1] = "president";
+	tab[2] = "shrubbery";
+
+
+	
