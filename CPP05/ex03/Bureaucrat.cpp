@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 13:58:33 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/29 18:29:58 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/01 10:57:25 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,12 +76,8 @@ void			Bureaucrat::executeForm(AForm const &f) const
 {
 	try
 	{
-		int exec = f.execute(*this);
-
-		if (exec == 0)
-			std::cout << this->getName() << " executed " << f.getFName() << std::endl; 
-		else if (exec == 1)
-			std::cout << this->getName() << " could not execute " << f.getFName() << ", it was not signed !" << std::endl;
+		f.execute(*this);
+		std::cout << this->getName() << " executed " << f.getFName() << std::endl; 
 	}
 	catch (std::exception &e)
 	{
