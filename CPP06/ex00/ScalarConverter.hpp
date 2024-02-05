@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 17:02:55 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/01 18:51:03 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/05 13:07:46 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 # define __ScalarConverter_hpp__
 
 #include <iostream>
+#include <iomanip>
 #include <string>
+#include <limits>
+#include <cstdlib>
 
 class	ScalarConverter
 {

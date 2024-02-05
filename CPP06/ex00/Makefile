@@ -22,6 +22,5 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
-	rm -f *_Shrubbery
 
 .PHONY: re fclean clean
