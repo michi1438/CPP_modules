@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 17:13:08 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/05 14:54:43 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/05 15:07:47 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,5 +134,3 @@ void ScalarConverter::convert(const std::string lit)
 		return ;
 	}
 }
-
-// Other

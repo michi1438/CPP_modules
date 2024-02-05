@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/01 17:02:55 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/05 13:07:46 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/05 15:08:00 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ class	ScalarConverter
 		static void convert(std::string lit);
 };
 
-//std::ostream& operator<<(std::ostream& os, const ScalarConverter& other);
 
 #endif

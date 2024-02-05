@@ -4,7 +4,7 @@ NAME = convert.out
 
 CXX = g++
 
-CXXFLAGS = -Werror -Wall -Wextra -std=c++98# -g3 -fsanitize=leak # makes it segfault with no details on the occuring error...
+CXXFLAGS = -Werror -Wall -Wextra -std=c++98# -g3 -fsanitize=address # makes it segfault with no details on the occuring error...
 
 SRCS = main.cpp ScalarConverter.cpp
 
