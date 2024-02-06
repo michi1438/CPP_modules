@@ -1,18 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.cpp                                           :+:      :+:    :+:   */
+/*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/05 23:47:16 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/06 13:49:37 by mguerga          ###   ########.fr       */
+/*   Created: 2024/02/06 18:30:44 by mguerga           #+#    #+#             */
+/*   Updated: 2024/02/06 19:05:52 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
-#include "A.hpp"
-#include "B.hpp"
-#include "C.hpp"
+#ifndef __iter_hpp__
+# define __iter_hpp__
+# include <iostream>
 
-Base::~Base(void) {}
+template <typename T>
+void func (T& val)
+{
+	val += val;
+	std::cout << val << std::endl;
+}
+
+template <typename T>
+void	iter(T *arr, int size, void (*func)(T&))
+{
+	int i = 0;
+
+	while (i < size)
+	{
+		func(arr[i]);
+		i++;
+	}
+}
+
+#endif

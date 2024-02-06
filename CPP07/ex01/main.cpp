@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.cpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/05 23:47:16 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/06 13:49:37 by mguerga          ###   ########.fr       */
+/*   Created: 2024/02/06 18:21:12 by mguerga           #+#    #+#             */
+/*   Updated: 2024/02/06 19:05:42 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Base.hpp"
-#include "A.hpp"
-#include "B.hpp"
-#include "C.hpp"
+#include "iter.hpp"
 
-Base::~Base(void) {}
+int	main(void)
+{
+	int arr[5] = { 0, 1, 2, 3, 4};
+	std::string arr1[5] = { "hello", "world", "in", "vertical", "form"};
+
+	iter(arr, 5, func);
+	iter(arr1, 5, func);
+}
+

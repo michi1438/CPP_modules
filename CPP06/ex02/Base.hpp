@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 23:44:59 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/06 00:52:30 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/06 13:50:29 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,6 @@ class Base
 {
 	public:
 		virtual			~Base(void);
-		static Base *	generate(void);		
-		static void		identify(Base* p);
-		static void		identify(Base& p);
 };
 
 #endif
