@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 12:39:54 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/01 13:36:26 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/06 13:34:52 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,24 +35,25 @@ Intern& Intern::operator= (const Intern& other)
 
 AForm * Intern::MakeForm(std::string form_name, std::string target_name)
 {
-	std::string tab[6];
+	std::string tab[7];
 	AForm *t_form;
 	int i = 0;
 
 	tab[0] = "robot";
 	tab[1] = "presi";
 	tab[2] = "shrub";
-	tab[3] = "Robot";
-	tab[4] = "Presi";
-	tab[5] = "Shrub";
+	tab[3] = "Null";
+	tab[4] = "Robot";
+	tab[5] = "Presi";
+	tab[6] = "Shrub";
 	
-	while (i < 6)
+	while (i < 7)
 	{
 		if (form_name.find(tab[i], 0) != std::string::npos)
 			break ;
 		i++;
 	}
-	switch (i % 3) {
+	switch (i % 4) {
 		case 0:
 			t_form = new RobotomyRequestForm(form_name, target_name);  
 			break ;
@@ -68,6 +69,3 @@ AForm * Intern::MakeForm(std::string form_name, std::string target_name)
 	std::cout << "Intern creates " << t_form->getFName() << std::endl;
 	return (t_form);
 }
-
-
-	

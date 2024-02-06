@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 15:39:22 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/24 10:40:13 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/06 12:56:36 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,16 @@ int main()
 	{
 		Bureaucrat b("John", 1);
 		b.increment();
+		std::cout << "------------------------------This shouldn't print------------------" << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try
+	{
+		Bureaucrat b("John", 150);
+		b.decrement();
 		std::cout << "------------------------------This shouldn't print------------------" << std::endl;
 	}
 	catch (std::exception &e)

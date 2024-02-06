@@ -4,7 +4,7 @@ NAME = coffee_makers.out
 
 CXX = g++
 
-CXXFLAGS = -Werror -Wall -Wextra -std=c++98# -g3 -fsanitize=leak # makes it segfault with no details on the occuring error...
+CXXFLAGS = -Werror -Wall -Wextra -std=c++98 -g3 -fsanitize=leak # makes it segfault with no details on the occuring error...
 
 SRCS = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
 

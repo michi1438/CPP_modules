@@ -4,7 +4,7 @@ NAME = BUREAUCRAT.out
 
 CXX = g++
 
-CXXFLAGS = -Werror -Wall -Wextra -std=c++98
+CXXFLAGS = -Werror -Wall -Wextra -std=c++98# -fsanitize=address
 
 SRCS = main.cpp Bureaucrat.cpp
 

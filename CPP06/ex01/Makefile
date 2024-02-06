@@ -1,12 +1,12 @@
 # Makefile - ex00 - cpp05
 
-NAME = MAGGOTS.out
+NAME = serialize.out
 
 CXX = g++
 
-CXXFLAGS = -Werror -Wall -Wextra -std=c++98# -fsanitize=address
+CXXFLAGS = -Werror -Wall -Wextra -std=c++98 -g3# -fsanitize=address # makes it segfault with no details on the occuring error...
 
-SRCS = main.cpp Bureaucrat.cpp Form.cpp
+SRCS = main.cpp Serializer.cpp Data.cpp
 
 OBJS = $(SRCS:cpp=o)
 

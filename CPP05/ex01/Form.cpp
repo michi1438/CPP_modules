@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 19:13:07 by mguerga           #+#    #+#             */
-/*   Updated: 2024/01/24 10:06:52 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/06 13:03:01 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,11 @@ Form::Form(std::string name, int sgrade, int egrade) :
    	SGrade(sgrade),
 	EGrade(egrade)
 {
-		if (SGrade < 1 || EGrade < 1)
-			throw (Form::GradeToHighException());
-		else if (SGrade > 150 || EGrade > 150)
-			throw (Form::GradeToLowException());
+	Signed = false;
+	if (SGrade < 1 || EGrade < 1)
+		throw (Form::GradeToHighException());
+	else if (SGrade > 150 || EGrade > 150)
+		throw (Form::GradeToLowException());
 }
 
 Form::~Form(void)
@@ -43,7 +44,6 @@ Form::Form(const Form& o) :
 	*this = o;
 }
 
-// TODO how does this work FName Sgrade and EGrade are not specified...
 Form&	Form::operator= (const Form& o) 
 {
 	this->Signed = o.Signed;
