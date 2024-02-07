@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 00:00:57 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/06 13:55:48 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/07 12:30:51 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,8 +76,10 @@ int main(void)
 	std::srand(std::time(NULL));
 	Base *b = generate();
 	Base *d = generate(); 
+	//Base bb;
 	
 	identify(b);
+	//identify(bb);
 	identify(*d);
 	delete b;
 }
