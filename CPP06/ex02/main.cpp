@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 00:00:57 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/07 12:30:51 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/07 12:42:26 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	identify(Base& p)
 {
 	try
 	{
-		dynamic_cast<A&>(p);
+		(void)dynamic_cast<A&>(p);
 		std::cout << "Identify by ref says this is a \"A\" class" << std::endl;
 		return ;
 	}
@@ -53,7 +53,7 @@ void	identify(Base& p)
 	}
 	try
 	{
-		dynamic_cast<B&>(p);
+		(void)dynamic_cast<B&>(p);
 		std::cout << "Identify by ref says this is a \"B\" class" << std::endl;
 		return ;
 	}
@@ -62,7 +62,7 @@ void	identify(Base& p)
 	}
 	try
 	{
-		dynamic_cast<C&>(p);
+		(void)dynamic_cast<C&>(p);
 		std::cout << "Identify by ref says this is a \"C\" class" << std::endl;
 		return ;
 	}
