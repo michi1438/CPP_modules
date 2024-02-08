@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 21:08:53 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/06 22:23:03 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/08 17:24:33 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define __Array_hpp__
 
 # include <iostream>
+# include <cstdlib>
 
 template <typename T>
 class	Array
@@ -29,9 +30,22 @@ class	Array
 
 	Array&	operator=(const Array& o);
 
-	size_t	size(void);
+	T&	operator[](const size_t ind);
+	size_t	size(void) const;
+	
+	class OutOfBoundException : public std::exception
+	{
+		public:
+			const char *what() const throw();
+	};
+
 };
 
-# include "Array.tpp"
+/*
+template <typename T>
+std::ostream& operator<<(std::ostream& os, const Array<T>& other);
+*/
+
+# include "Array.cpp"
 
 #endif

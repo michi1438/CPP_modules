@@ -4,7 +4,7 @@ NAME = Array.out
 
 CXX = g++
 
-CXXFLAGS = -Werror -Wall -Wextra -std=c++98# -g3
+CXXFLAGS = -Werror -Wall -Wextra -std=c++98 -g3 -fsanitize=undefined
 
 SRCS = main.cpp
 
