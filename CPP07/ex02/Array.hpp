@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 21:08:53 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/08 17:24:33 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/08 17:47:03 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ template <typename T>
 std::ostream& operator<<(std::ostream& os, const Array<T>& other);
 */
 
-# include "Array.cpp"
+# include "Array.tpp"
 
 #endif

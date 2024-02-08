@@ -1,10 +1,10 @@
-# Makefile - ex00 - cpp07
+# Makefile - ex00 - cpp08
 
-NAME = Array.out
+NAME = EasyFind.out
 
 CXX = g++
 
-CXXFLAGS = -Werror -Wall -Wextra -std=c++98# -g3 -fsanitize=undefined
+CXXFLAGS = -Werror -Wall -Wextra -std=c++98# -g3
 
 SRCS = main.cpp
 
