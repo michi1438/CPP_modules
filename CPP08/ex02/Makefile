@@ -1,12 +1,12 @@
 # Makefile - ex00 - cpp08
 
-NAME = Span.out
+NAME = MutantStack.out
 
 CXX = g++
 
 CXXFLAGS = -Werror -Wall -Wextra -std=c++98# -g3
 
-SRCS = main.cpp Span.cpp
+SRCS = main.cpp
 
 OBJS = $(SRCS:cpp=o)
 

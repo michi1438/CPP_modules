@@ -6,14 +6,15 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 15:09:25 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/11 19:24:43 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/12 09:38:25 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __Span_cpp__
-# define __Span_cpp__
+//#ifndef __Span_cpp__
+//# define __Span_cpp__
 
 # include <iostream>
+# include "Span.hpp"
 
 // Exception
 class OutOfBoundExcept : public std::exception
@@ -33,35 +34,30 @@ class NoSpanExcept : public std::exception
 };
 //cdco
 
-template <typename T> 
-Span<T>::Span(unsigned int given_len) : max_len(given_len)
+Span::Span(unsigned int given_len) : max_len(given_len)
 {
 	this->vec.clear();
 	//std::cout << vec.capacity() << std::endl;
 }
 
-template <typename T> 
-Span<T>::~Span(void) {}
+Span::~Span(void) {}
 
-template <typename T>
-Span<T>::Span(const Span<T>& o)
+Span::Span(const Span& o)
 {
 	*this = o;
 }
 
-template <typename T>
-Span<T>& Span<T>::operator=(const Span<T>& o)
+Span& Span::operator=(const Span& o)
 {
-	this->len = o.len();
-	this->vec = vec(this->len);
+	this->max_len = o.max_len;
+	this->vec = o.vec;
 
 	return *this;
 }
 
 //member functions
 
-template <typename T>
-void	Span<T>::addNumber(T val)
+void	Span::addNumber(int val)
 {
 	if (vec.size() < this->max_len)
 		this->vec.push_back(val);
@@ -70,15 +66,14 @@ void	Span<T>::addNumber(T val)
 	//std::cout << "size =" << vec.size() << std::endl;
 }
 
-template <typename T>
-unsigned int	Span<T>::shortestSpan(void) const
+unsigned int	Span::shortestSpan(void) const
 {
 	if (vec.size() < 2)
 		throw NoSpanExcept();
 	unsigned int min_span = this->longestSpan();
-	std::vector<T> temp = vec; 
+	std::vector<int> temp = vec; 
 	std::sort(temp.begin(), temp.end());
-	typename std::vector<T>::const_iterator it = temp.begin();
+	std::vector<int>::const_iterator it = temp.begin();
 	while (it != temp.end())
 	{
 		if (it != temp.begin() && min_span > static_cast<unsigned int>(*it - *(it - 1)))
@@ -88,8 +83,7 @@ unsigned int	Span<T>::shortestSpan(void) const
 	return (min_span);
 }
 
-template <typename T>
-unsigned int	Span<T>::longestSpan(void) const
+unsigned int	Span::longestSpan(void) const
 {
 	if (vec.size() < 2)
 		throw NoSpanExcept();
@@ -98,8 +92,7 @@ unsigned int	Span<T>::longestSpan(void) const
 	return (max_val - min_val);	
 }
 
-template <typename T>
-void	Span<T>::addRange(std::vector<T> tobadded)
+void	Span::addRange(std::vector<int> tobadded)
 {
 	if (!tobadded.empty() && vec.size() + tobadded.size() < this->max_len)
 	{
@@ -109,4 +102,4 @@ void	Span<T>::addRange(std::vector<T> tobadded)
 		throw OutOfBoundExcept();
 }
 
-#endif
+//#endif
