@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 10:08:17 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/12 14:01:09 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/12 15:25:09 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 int main(void)
 {
 
-/*	MutantStack<int>	mstack;
+	{
+	std::cout << "mytest" << std::endl;
+	MutantStack<int>	mstack;
 
 	mstack.push(5);
 	mstack.push(17);
@@ -38,10 +40,12 @@ int main(void)
 		std::cout << *it << std::endl;
 		it++;
 	}
-	return 0;
+	std::cout << "END of mytest##########################################" << std::endl;
+	std::cout << std::endl;
 	}
-*/
+
 	{
+	std::cout << "test Mutantstack" << std::endl;
 	MutantStack<int> mstack;
 	mstack.push(5);
 	mstack.push(17);
@@ -63,10 +67,12 @@ int main(void)
 	++it;
 	}
 	std::stack<int> s(mstack);
-	return 0;
+	std::cout << "END of test Mutantstack#################################" << std::endl;
+	std::cout << std::endl;
 	}
-/*
+
 	{
+	std::cout << "test list#################################" << std::endl;
 	std::list<int> mstack;
 	mstack.push_back(5);
 	mstack.push_back(17);
@@ -87,7 +93,9 @@ int main(void)
 	std::cout << *it << std::endl;
 	++it;
 	}
-	return 0;
+	std::cout << "END of test list#################################" << std::endl;
+	std::cout << std::endl;
 	}
-*/
+
+	return 0;
 }

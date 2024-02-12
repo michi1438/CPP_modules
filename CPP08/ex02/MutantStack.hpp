@@ -6,16 +6,16 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 10:10:12 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/12 13:50:22 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/12 15:26:47 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef __MutantStack_hpp__
 # define __MutantStack_hpp__
 
+//# include <vector>
 # include <stack>
 # include <list>
-# include <vector>
 # include <algorithm>
 # include <iostream>
 
@@ -25,7 +25,7 @@ class MutantStack : public std::stack<T, Container>
 {
 	public:
 
-		typedef typename Container::const_iterator const_iterator;
+	//	typedef typename Container::const_iterator const_iterator;
 		typedef typename Container::iterator iterator;
 		# include "MutantStack.tpp"
 
