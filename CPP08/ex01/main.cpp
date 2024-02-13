@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/11 13:36:13 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/12 09:59:07 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/13 12:38:35 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int main(void)
 {
-/*
 	{
 	Span sp = Span(5);
 	sp.addNumber(6);
@@ -24,8 +23,10 @@ int main(void)
 	sp.addNumber(11);
 	std::cout << sp.shortestSpan() << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
+	
+	return 0;
 	}
-*/	
+/*
 	Span s(1100);
 	Span ss(1);
 	try
@@ -85,4 +86,5 @@ int main(void)
 		std::cout << e.what() << std::endl;
 	}
 	return 0;
+*/	
 }

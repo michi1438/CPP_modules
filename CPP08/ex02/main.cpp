@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 10:08:17 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/12 15:25:09 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/13 12:41:36 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int main(void)
 {
-
 	{
 	std::cout << "mytest" << std::endl;
 	MutantStack<int>	mstack;
@@ -63,8 +62,8 @@ int main(void)
 	--it;
 	while (it != ite)
 	{
-	std::cout << *it << std::endl;
-	++it;
+		std::cout << *it << std::endl;
+		++it;
 	}
 	std::stack<int> s(mstack);
 	std::cout << "END of test Mutantstack#################################" << std::endl;
@@ -90,8 +89,8 @@ int main(void)
 	--it;
 	while (it != ite)
 	{
-	std::cout << *it << std::endl;
-	++it;
+		std::cout << *it << std::endl;
+		++it;
 	}
 	std::cout << "END of test list#################################" << std::endl;
 	std::cout << std::endl;

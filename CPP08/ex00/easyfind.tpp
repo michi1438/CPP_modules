@@ -10,7 +10,6 @@ class ValueNotFoundExcept : public std::exception
 	}
 };
 
-
 template <typename T>
 int easyfind(T &lst, int needle)
 {
