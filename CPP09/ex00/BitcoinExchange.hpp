@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 15:42:39 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/13 21:02:54 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/22 10:22:43 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class BitcoinExchange
 		BitcoinExchange(const BitcoinExchange& o); 
 		BitcoinExchange&	operator=(const BitcoinExchange& o);
 		//member func
+		int	interpret(std::string input);	
 			
 };
 
