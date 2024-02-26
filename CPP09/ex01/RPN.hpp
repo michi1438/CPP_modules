@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 16:28:22 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/22 16:44:43 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/26 15:08:21 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,16 @@
 # include <sstream>
 # include <stack>
 # include <string>
+# include <cstdlib>
+# include <climits>
 
 class RPN
 {
 	private:
-		std::stack<int> stack_val;
-		std::stack<int> stack_ope;
+		std::stack<int> stack;
+		std::stack<int> stacktemp;
+		bool pushope(std::string seg);
+
 	public:
 		//cdco
 		RPN(std::string);
@@ -31,7 +35,25 @@ class RPN
 		RPN& operator= (const RPN& o);
 
 		//member func
+		float calc();
+		int eval(int vec[3]);
 
+		class ExceptInputErr : public std::exception
+		{
+			public:
+				const char *what() const throw ()
+				{
+					return ("Error: arg doesn't evaluate...");
+				}
+		};
+		class ExceptDivisionZero: public std::exception
+		{
+			public:
+				const char *what() const throw ()
+				{
+					return ("Error: can't divide by zero...");
+				}
+		};
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 16:23:04 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/22 16:28:03 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/02/26 15:09:53 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,18 @@ int	main(int ac, char** av)
 		return 1;
 	}
 	else 
-		RPN Claculator(av[1]);
+	{
+		try
+		{
+			RPN rpn(av[1]);
+			float res = rpn.calc();
+			std::cout << res << std::endl;
+		}
+		catch (std::exception &e)
+		{
+			std::cout << e.what() << std::endl;
+			return 1;
+		}
+	}
 	return 0;
 }
