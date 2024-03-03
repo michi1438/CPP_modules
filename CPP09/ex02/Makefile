@@ -6,7 +6,7 @@
 #    By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 15:34:02 by mguerga           #+#    #+#              #
-#    Updated: 2024/02/27 13:50:51 by mguerga          ###   ########.fr        #
+#    Updated: 2024/02/28 16:39:06 by mguerga          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,4 +34,3 @@ fclean: clean
 	rm -f $(NAME)
 
 .PHONY: re fclean clean
-	
