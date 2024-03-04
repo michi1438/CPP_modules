@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:39:39 by mguerga           #+#    #+#             */
-/*   Updated: 2024/03/04 14:54:43 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/03/04 16:19:37 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ PmergeMe::PmergeMe(int ac, char **av)
 	has_stray = (ac % 2 != 1);
 	for (int i = 1; av[i] != NULL; i++)
 	{
+		std::string str = av[i];
+		if (str.find_first_not_of("0123456789") != std::string::npos)
+			throw ExceptWrongInput(); 	
 		deq.push_back(atoi(av[i]));
 		vec.push_back(atoi(av[i]));
 	}
@@ -82,7 +85,8 @@ void PmergeMe::mi_sort(int status)
 	delete tvb;
 }
 
-//List mi_sort
+//deque mi_sort
+
 void PmergeMe::deq_pairnswap()
 {
 	Iterator_deq it = this->deq.begin();
