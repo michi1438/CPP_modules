@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 16:28:22 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/26 15:08:21 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/03/04 17:16:45 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class RPN
 		bool pushope(std::string seg);
 
 	public:
+		int status_code;
+		
 		//cdco
 		RPN(std::string);
 		~RPN();

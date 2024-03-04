@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 16:41:33 by mguerga           #+#    #+#             */
-/*   Updated: 2024/02/26 16:04:55 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/03/04 17:17:18 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ bool RPN::pushope(std::string seg)
 
 RPN::RPN(std::string input)
 {
+	this->status_code = 0;
 	std::string segment;
 	std::istringstream iss(input);
 	while (iss >> segment)
@@ -102,6 +103,12 @@ float RPN::calc(void)
 
 int RPN::eval(int vec[3])
 {
+	if (vec[0] > INT_MAX / 10 || vec[0] < INT_MIN / 10 || vec[1] > INT_MAX / 10 || vec[1] < INT_MIN / 10)
+	{
+		std::cout << "This operation might overflow, mind the interpretation of your result" << std::endl;
+		this->status_code = -1;
+	}
+	
 	switch (vec[2])
 	{
 		case INT_MIN + 1:

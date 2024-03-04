@@ -6,7 +6,7 @@
 #    By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/12 15:34:02 by mguerga           #+#    #+#              #
-#    Updated: 2024/03/04 13:45:44 by mguerga          ###   ########.fr        #
+#    Updated: 2024/03/04 16:26:20 by mguerga          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = PmergeMe
 
 CXX = g++
 
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98# -g3 -fsanitize=address
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g3 -fsanitize=address
 
 SRCS = main.cpp PmergeMe.cpp
 
