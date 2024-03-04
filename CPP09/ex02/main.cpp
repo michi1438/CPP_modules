@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:04:55 by mguerga           #+#    #+#             */
-/*   Updated: 2024/03/03 20:20:16 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/03/04 14:53:42 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,27 +22,30 @@ int main(int ac, char **av)
 	PmergeMe elem(ac, av);
 	std::cout << "Before: " << elem << std::endl;
 	elem.mi_sort(0);
-	std::cout << "After: " << elem << std::endl;
 	std::cout.setf(std::ios::fixed, std::ios::floatfield);
+	std::cout << "After: " << elem << std::endl;
 	std::cout << "Time to process a range of " << elem.size << " elements with std::vector : " << elem.time_us / 1000000 << " s" << std::endl;
 	elem.mi_sort(1);
 	std::cout << "Time to process a range of " << elem.size << " elements with std::deque : " << elem.time_us / 1000000 << " s" << std::endl;
-//
-//
-//
+
+
+
 //	checks
 	std::vector<unsigned int>::iterator it = elem.vec.begin(); 
-	while (it != elem.vec.end())
+	std::deque<unsigned int>::iterator it_deq = elem.deq.begin(); 
+	while (it != elem.vec.end() && it_deq != elem.deq.end())
 	{
-		if (it != elem.vec.begin() && *it < *(it - 1))
+		if (it != elem.vec.begin() && (*it < *(it - 1) || *it_deq != *it))
+		{
 			std::cout << "XXXXXXXXXXXXX    container is NOT ordered   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << std::endl;
+			std::cout << *it_deq << std::endl; 
+			std::cout << *it << std::endl; 
+		}
 		it++;
+		it_deq++;
 	}
-	if (elem.size != elem.vec.size())
-			std::cout << "XXXXXXXXXXXXX    container is NOT of the right lengt   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << std::endl;
-	/*
-	
-*/
+	if (elem.size != elem.vec.size() || elem.size != elem.deq.size())
+			std::cout << "XXXXXXXXXXXXX    container is NOT of the right length   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" << std::endl;
 	return 0;
 }
 	

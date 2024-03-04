@@ -6,7 +6,7 @@
 /*   By: mguerga <mguerga@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 14:23:34 by mguerga           #+#    #+#             */
-/*   Updated: 2024/03/03 18:10:52 by mguerga          ###   ########.fr       */
+/*   Updated: 2024/03/04 13:28:25 by mguerga          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,9 @@ class PmergeMe
 		std::vector<unsigned int>::iterator recurse_bin_srt(std::vector<unsigned int> tmp, unsigned int needle, std::vector<unsigned int>::iterator it, std::vector<unsigned int>::iterator it_end);
 		//List mi_sort
 		void deq_pairnswap();
+		void recurs_order_pairs_deq(std::deque<unsigned int> tmp);
+		void binary_sort_deq(std::deque<unsigned int> tmp);
+		std::deque<unsigned int>::iterator recurse_bin_srt_deq(std::deque<unsigned int> tmp, unsigned int needle, std::deque<unsigned int>::iterator it, std::deque<unsigned int>::iterator it_end);
 };
 
 std::ostream& operator<< (std::ostream& os, const PmergeMe& o);
